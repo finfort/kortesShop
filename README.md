@@ -10,7 +10,8 @@
  * Install vagrant plugins "vagrant plugin install vagrant-vbguest"
 ### How to run:
  * From project root directory execute "vagrant up" command
- * (optional) After vagrant configuration updates - from project root directory execute "vagrant provision" command and restart box ("vagrant reload")
+ * Connect via SSH (see Dev environment resources section)
+ * Run "dos2unix /vagrant/vagrant-environment/kortes.sh && bash /vagrant/vagrant-environment/kortes.sh" command
 
 ## Dev environment resources
 ### SSH box's credentials:
