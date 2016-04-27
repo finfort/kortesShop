@@ -1,6 +1,4 @@
 import angular from 'angular';
 import angularMeteor from 'angular-meteor';
- 
-angular.module('kortesMeteorApp', [
-  angularMeteor
-]);
+
+import { name as KortesShop } from '../imports/ui/components/kortesshop/kortesshop';
