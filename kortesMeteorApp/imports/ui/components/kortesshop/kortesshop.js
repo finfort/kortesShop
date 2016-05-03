@@ -19,7 +19,8 @@ export default angular.module(name, [
   PartiesList,
   Login,
   Navigation,
-  'accounts.ui' // dotansimha:accounts-ui-angular
+  'accounts.ui', // dotansimha:accounts-ui-angular
+  'angular-meteor.auth'
 ]).component(name, {
   templateUrl: `imports/ui/components/${name}/${name}.html`,
   controllerAs: name,

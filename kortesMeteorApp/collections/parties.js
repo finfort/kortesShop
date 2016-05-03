@@ -1,6 +1,6 @@
 import { Mongo } from 'meteor/mongo';
 
-// export const Parties = new Mongo.Collection('parties');
+// export const Parties = new Mongo.Collection('parties'); // throws  ReferenceError: Parties is not defined
 Parties = new Mongo.Collection('parties');
 
 Parties.allow({
