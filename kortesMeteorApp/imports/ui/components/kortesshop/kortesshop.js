@@ -1,8 +1,9 @@
-import angular from 'angular';
+import * as angular  from 'angular';
 import angularMeteor from 'angular-meteor';
 import uiRouter from 'angular-ui-router';
  
 import './kortesshop.html';
+
 import { name as PartiesList } from '../partiesList/partiesList';
 import { name as Navigation } from '../navigation/navigation';
 import { name as Login } from '../login/login';
@@ -17,7 +18,8 @@ export default angular.module(name, [
   uiRouter,
   PartiesList,
   Login,
-  Navigation
+  Navigation,
+  'accounts.ui' // dotansimha:accounts-ui-angular
 ]).component(name, {
   templateUrl: `imports/ui/components/${name}/${name}.html`,
   controllerAs: name,
