@@ -1,1 +1,4 @@
 <div>Login</div>
+<div ng-show="login.isLoggingIn">Logging in...</div>
+<div ng-show="login.currentUser">{{login.currentUser}} !!!!and {{login.loggingIn}}</div>
+<div ng-hide="login.currentUser">I am visible only for guests!</div>

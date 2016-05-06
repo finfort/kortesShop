@@ -8,7 +8,24 @@ import { name as PartiesList } from '../partiesList/partiesList';
 import { name as Navigation } from '../navigation/navigation';
 import { name as Login } from '../login/login';
 
-class KortesShop {}
+class KortesShop {
+  //  constructor($scope, $reactive) {
+  //       'ngInject';
+
+  //       $reactive(this).attach($scope);
+
+  //       this.helpers({
+  //           currentUser() {
+  //               return Meteor.user();
+  //           },
+  //           loggingIn() {
+  //               return Meteor.loggingIn();
+  //           }
+  //       })
+
+  //   }
+}
+
  
 const name = 'kortesshop';
  
@@ -19,8 +36,8 @@ export default angular.module(name, [
   PartiesList,
   Login,
   Navigation,
-  'accounts.ui', // dotansimha:accounts-ui-angular
-  'angular-meteor.auth'
+  'accounts.ui' // dotansimha:accounts-ui-angular
+  
 ]).component(name, {
   templateUrl: `imports/ui/components/${name}/${name}.html`,
   controllerAs: name,

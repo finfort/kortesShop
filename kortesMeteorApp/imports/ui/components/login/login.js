@@ -9,7 +9,15 @@ class Login {
 
         $reactive(this).attach($scope);
 
-       
+        this.helpers({
+            currentUser() {
+                return Meteor.user();
+            },
+            loggingIn() {
+                return Meteor.loggingIn();
+            }
+        })
+
     }
 }
 
@@ -18,20 +26,21 @@ const name = 'login';
 // create a module
 export default angular.module(name, [
     angularMeteor,
-    uiRouter
+    uiRouter,
+    'angular-meteor.auth'
 ]).component(name, {
     templateUrl: `imports/ui/components/${name}/${name}.html`,
     controllerAs: name,
     controller: Login
 })
-  .config(config);
- 
+    .config(config);
+
 function config($stateProvider) {
-  'ngInject';
-  $stateProvider
-    .state('login', {
-      url: '/login',
-      template: '<login></login>'
-      
-    });
+    'ngInject';
+    $stateProvider
+        .state('login', {
+            url: '/login',
+            template: '<login></login>'
+
+        });
 }
