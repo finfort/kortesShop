@@ -1,6 +1,9 @@
 import * as angular  from 'angular';
 import angularMeteor from 'angular-meteor';
 import uiRouter from 'angular-ui-router';
+import { Products } from '../../../api/products';
+import { name as ProductAdd } from '../productAdd/productAdd';
+import { name as ProductRemove } from '../productRemove/productRemove';
 
 import './productsList.html';
 class ProductsList {
