@@ -4,7 +4,7 @@ import uiRouter from 'angular-ui-router';
  
 import './kortesshop.html';
 
-import { name as PartiesList } from '../partiesList/partiesList';
+import { name as ProductsList } from '../productsList/productsList';
 import { name as Navigation } from '../navigation/navigation';
 import { name as Login } from '../login/login';
 
@@ -33,7 +33,7 @@ const name = 'kortesshop';
 export default angular.module(name, [
   angularMeteor,
   uiRouter,
-  PartiesList,
+  ProductsList,
   Login,
   Navigation,
   'accounts.ui' // dotansimha:accounts-ui-angular
@@ -50,5 +50,5 @@ function config($locationProvider, $urlRouterProvider) {
  
   $locationProvider.html5Mode(true);
  
-  $urlRouterProvider.otherwise('/parties');
+  $urlRouterProvider.otherwise('/products');
 }

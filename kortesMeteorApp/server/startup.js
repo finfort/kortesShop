@@ -1,6 +1,6 @@
 Meteor.startup(() => {
-  if (Parties.find().count() === 0) {
-    const parties = [{
+  if (Products.find().count() === 0) {
+    const products = [{
       'name': 'Dubstep-Free Zone',
       'description': 'Fast just got faster with Nexus S.'
     }, {
@@ -11,8 +11,8 @@ Meteor.startup(() => {
       'description': 'Leisure suit required. And only fiercest manners.'
     }];
  
-    parties.forEach((party) => {
-      Parties.insert(party)
+    products.forEach((product) => {
+      Products.insert(product)
     });
   }
 });
