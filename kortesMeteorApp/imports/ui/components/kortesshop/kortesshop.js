@@ -7,7 +7,7 @@ import './kortesshop.html';
 import { name as ProductsList } from '../productsList/productsList';
 import { name as Navigation } from '../navigation/navigation';
 import { name as Login } from '../login/login';
-
+import {name as ProductAdd } from '../productAdd/productAdd';
 class KortesShop {
   //  constructor($scope, $reactive) {
   //       'ngInject';
@@ -36,7 +36,8 @@ export default angular.module(name, [
   ProductsList,
   Login,
   Navigation,
-  'accounts.ui' // dotansimha:accounts-ui-angular
+  'accounts.ui', // dotansimha:accounts-ui-angular
+  ProductAdd
   
 ]).component(name, {
   templateUrl: `imports/ui/components/${name}/${name}.html`,
