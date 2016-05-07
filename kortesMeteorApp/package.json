@@ -3,7 +3,7 @@
   "private": true,
   "scripts": {
     "start": "meteor run",
-    "test:watch": "meteor test --driver-package sanjo:jasmine"
+    "test:watch": "meteor test --driver-package sanjo:jasmine --port 3100"
   },
   "dependencies": {
     "angular": "^1.5.5",
