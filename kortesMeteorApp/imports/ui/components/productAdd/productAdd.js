@@ -1,4 +1,5 @@
 import angular from 'angular';
+import { Meteor } from 'meteor/meteor';
 import angularMeteor from 'angular-meteor';
 import { Products } from '../../../api/products';
 import './productAdd.html';
@@ -9,14 +10,15 @@ class ProductAdd {
     }
 
     submit() {
+        this.product.owner = Meteor.user()._id;
         console.log('submit:', JSON.stringify(this.product));
         Products.insert(this.product);
         this.reset();
     }
-    
+
     reset() {
-    this.product = {};
-  }
+        this.product = {};
+    }
 }
 
 const name = 'productAdd';
