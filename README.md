@@ -11,7 +11,12 @@
 ### How to run:
  * From project root directory execute "vagrant up" command
  * Connect via SSH (see Dev environment resources section)
- * Run "dos2unix /vagrant/vagrant-environment/kortes.sh && bash /vagrant/vagrant-environment/kortes.sh" command
+ * Run `dos2unix /vagrant/vagrant-environment/kortes.sh && bash /vagrant/vagrant-environment/kortes.sh`
+ 
+ ### How to run tests 
+ * Via desktop command line in local meteor app folder 
+ * Type `meteor npm run test:watch` 
+ * Open browser window type: `http://localhost:3100/`
 
 ## Dev environment resources
 ### SSH box's credentials:
