@@ -1,1 +1,15 @@
-The product your selected is: {{ productDetails.productId }}
+<form>
+  product name: <input type="text" ng-model="productDetails.product.name" />
+  Description: <input type="text" ng-model="productDetails.product.description" />
+  Public product? <input type="checkbox" ng-model="productDetails.product.public">
+  <button ng-click="productDetails.save()">Save</button>
+</form>
+ 
+<button ui-sref="products">Back</button>
+ 
+<ul>
+  Users:
+  <li ng-repeat="user in productDetails.users">
+    <div>{{ user.emails[0].address }}</div>
+  </li>
+</ul>

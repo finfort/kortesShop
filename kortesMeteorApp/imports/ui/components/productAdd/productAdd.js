@@ -1,7 +1,7 @@
 import angular from 'angular';
 import { Meteor } from 'meteor/meteor';
 import angularMeteor from 'angular-meteor';
-import { Products } from '../../../api/products';
+import { Products } from '../../../api/products/index';
 import './productAdd.html';
 
 class ProductAdd {

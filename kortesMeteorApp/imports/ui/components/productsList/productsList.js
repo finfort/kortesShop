@@ -1,7 +1,7 @@
 import * as angular  from 'angular';
 import angularMeteor from 'angular-meteor';
 import uiRouter from 'angular-ui-router';
-import { Products } from '../../../api/products';
+import { Products } from '../../../api/products/index';
 import { name as ProductAdd } from '../productAdd/productAdd';
 import { name as ProductRemove } from '../productRemove/productRemove';
 
@@ -11,6 +11,8 @@ class ProductsList {
         'ngInject';
 
         $reactive(this).attach($scope);
+
+        this.subscribe('products');
 
         this.helpers({
             products() {
@@ -31,13 +33,13 @@ export default angular.module(name, [
     controllerAs: name,
     controller: ProductsList
 })
-  .config(config);
- 
+    .config(config);
+
 function config($stateProvider) {
-  'ngInject';
-  $stateProvider
-    .state('products', {
-      url: '/products',
-      template: '<products-list></products-list>'
-    });
+    'ngInject';
+    $stateProvider
+        .state('products', {
+            url: '/products',
+            template: '<products-list></products-list>'
+        });
 }

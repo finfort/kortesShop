@@ -2,10 +2,14 @@
   <label>
     Product Name:
   </label>
-  <input type="text" ng-model="productAdd.product.name"/>
+  <input type="text" ng-model="productAdd.product.name" />
   <label>
     Description:
   </label>
-  <input type="text"  ng-model="productAdd.product.description"/>
+  <input type="text" ng-model="productAdd.product.description" />
+  <label>
+    Public Product?
+  </label>
+  <input type="checkbox" ng-model="productAdd.product.public">
   <button ng-click="productAdd.submit()">Add Product!</button>
 </form>

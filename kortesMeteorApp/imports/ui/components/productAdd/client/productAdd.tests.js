@@ -11,7 +11,11 @@ describe('ProductAdd', () => {
     let controller;
     const product = {
       name: 'Foo',
-      description: 'Birthday of Foo'
+       description: 'Birthday of Foo',
+      public: true
+    };
+    const user = {
+      _id: 'userId'
     };
  
     beforeEach(() => {
@@ -20,6 +24,7 @@ describe('ProductAdd', () => {
           $scope: $rootScope.$new(true)
         });
       });
+       spyOn(Meteor, 'user').and.returnValue(user);
     });
  
     describe('reset()', () => {
@@ -42,7 +47,12 @@ describe('ProductAdd', () => {
       });
  
       it('should insert a new product', () => {
-        expect(Products.insert).toHaveBeenCalledWith(product);
+        expect(Products.insert).toHaveBeenCalledWith({
+          name: product.name,
+          description: product.description,
+          public: product.public,
+          owner: user._id
+        });
       });
  
       it('should call reset()', () => {
