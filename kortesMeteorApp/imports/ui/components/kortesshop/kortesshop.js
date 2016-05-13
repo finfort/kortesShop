@@ -9,26 +9,11 @@ import { name as Navigation } from '../navigation/navigation';
 import { name as Login } from '../login/login';
 import { name as ProductAdd } from '../productAdd/productAdd';
 import { name as ProductRemove } from '../productRemove/productRemove';
+import { name as ProductDetails } from '../productDetails/productDetails';
 
 class KortesShop {
-  //  constructor($scope, $reactive) {
-  //       'ngInject';
 
-  //       $reactive(this).attach($scope);
-
-  //       this.helpers({
-  //           currentUser() {
-  //               return Meteor.user();
-  //           },
-  //           loggingIn() {
-  //               return Meteor.loggingIn();
-  //           }
-  //       })
-
-  //   }
 }
-
-
 const name = 'kortesshop';
 
 // create a module
@@ -40,7 +25,8 @@ export default angular.module(name, [
   Navigation,
   'accounts.ui', // dotansimha:accounts-ui-angular
   ProductAdd,
-  ProductRemove
+  ProductRemove,
+  ProductDetails
 
 ]).component(name, {
   templateUrl: `imports/ui/components/${name}/${name}.html`,
