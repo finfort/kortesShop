@@ -1,7 +1,7 @@
 <product-add></product-add>
 
 <ul>
-  <li ng-repeat="product in productsList.products">
+  <li dir-paginate="product in productsList.products | itemsPerPage: productsList.perPage" total-items="productsList.productsCount">
     <a ui-sref="productDetails({ productId: product._id })">
       {{product.name}}
     </a>
@@ -9,3 +9,5 @@
     <product-remove product="product"></product-remove>
   </li>
 </ul>
+
+<dir-pagination-controls on-page-change="productsList.pageChanged(newPageNumber)"></dir-pagination-controls>
