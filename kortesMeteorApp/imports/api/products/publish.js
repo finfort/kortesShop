@@ -4,7 +4,7 @@ import { Counts } from 'meteor/tmeasday:publish-counts';
 import { Products } from './collection';
 
 if (Meteor.isServer) {
-  Meteor.publish('products', function (options) {
+  Meteor.publish('products', function (options, searchString) {
     const selector = {
       $or: [{
         // the public products
@@ -26,6 +26,15 @@ if (Meteor.isServer) {
             }]
         }]
     };
+    
+    // mongo regex for searching products by name
+     if (typeof searchString === 'string' && searchString.length) {
+      selector.name = {
+        $regex: `.*${searchString}.*`,
+        $options : 'i'
+      };
+    }
+    
     //https://github.com/percolatestudio/publish-counts query only  products that should be available to that specific client
     Counts.publish(this, 'numberOfProducts', Products.find(selector), {
       noReady: true
