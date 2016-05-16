@@ -3,11 +3,11 @@ import angularMeteor from 'angular-meteor';
 import uiRouter from 'angular-ui-router';
 import utilsPagination from 'angular-utils-pagination';
 import { Counts } from 'meteor/tmeasday:publish-counts';
- 
+
 import { Products } from '../../../api/products/index';
 import { name as ProductAdd } from '../productAdd/productAdd';
 import { name as ProductRemove } from '../productRemove/productRemove';
-
+import { name as ProductsSort } from '../productsSort/productsSort';
 
 import './productsList.html';
 class ProductsList {
@@ -44,6 +44,10 @@ class ProductsList {
     pageChanged(newPage) {
         this.page = newPage;
     }
+
+    sortChanged(sort) {
+        this.sort = sort;
+    }
 }
 
 const name = 'productsList';
@@ -52,7 +56,10 @@ const name = 'productsList';
 export default angular.module(name, [
     angularMeteor,
     uiRouter,
-    utilsPagination
+    utilsPagination,
+    ProductsSort,
+    ProductAdd,
+    ProductRemove
 ]).component(name, {
     templateUrl: `imports/ui/components/${name}/${name}.html`,
     controllerAs: name,

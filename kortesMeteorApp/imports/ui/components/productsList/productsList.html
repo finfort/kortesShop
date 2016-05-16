@@ -1,5 +1,7 @@
 <product-add></product-add>
 
+<products-sort on-change="productsList.sortChanged(sort)" property="name" order="1"></products-sort>
+ 
 <ul>
   <li dir-paginate="product in productsList.products | itemsPerPage: productsList.perPage" total-items="productsList.productsCount">
     <a ui-sref="productDetails({ productId: product._id })">
