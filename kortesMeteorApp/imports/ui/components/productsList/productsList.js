@@ -22,11 +22,13 @@ class ProductsList {
             name: 1
         };
 
+        this.searchText = '';
+
         this.subscribe('products', () => [{
             limit: parseInt(this.perPage),
             skip: parseInt((this.getReactively('page') - 1) * this.perPage),
             sort: this.getReactively('sort')
-        }
+        }, this.getReactively('searchText')
         ]);
 
         this.helpers({
