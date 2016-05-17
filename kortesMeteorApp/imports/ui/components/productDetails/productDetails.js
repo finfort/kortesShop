@@ -23,6 +23,9 @@ class ProductDetails {
             },
             users() {
                 return Meteor.users.find({});
+            },
+            isLoggedIn() {
+                return !!Meteor.userId();
             }
         });
     }

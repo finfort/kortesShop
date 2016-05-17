@@ -1,7 +1,7 @@
 <form>
-  product name: <input type="text" ng-model="productDetails.product.name" />
-  Description: <input type="text" ng-model="productDetails.product.description" />
-  Public product? <input type="checkbox" ng-model="productDetails.product.public">
+  product name: <input type="text" ng-model="productDetails.product.name"  ng-disabled="!productDetails.isLoggedIn"/>
+  Description: <input type="text" ng-model="productDetails.product.description" ng-disabled="!productDetails.isLoggedIn" />
+  Public product? <input type="checkbox" ng-model="productDetails.product.public" ng-disabled="!productDetails.isLoggedIn">
   <button ng-click="productDetails.save()">Save</button>
 </form>
  

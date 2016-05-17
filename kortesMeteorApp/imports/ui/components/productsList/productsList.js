@@ -39,6 +39,9 @@ class ProductsList {
             },
             productsCount() {
                 return Counts.get('numberOfProducts');
+            },
+            isLoggedIn() {
+                return !!Meteor.userId();
             }
         });
     }
@@ -49,6 +52,10 @@ class ProductsList {
 
     sortChanged(sort) {
         this.sort = sort;
+    }
+    
+    isOwner(product) {
+        return this.isLoggedIn && product.owner === this.currentUserId;
     }
 }
 

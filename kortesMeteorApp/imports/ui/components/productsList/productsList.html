@@ -1,5 +1,7 @@
-<product-add></product-add>
- 
+<product-add ng-show="productsList.isLoggedIn"></product-add>
+<div ng-hide="productsList.isLoggedIn">
+  Log in to add a product!
+</div>
 <input type="search" ng-model="productsList.searchText" placeholder="Search" />
  
 <products-sort on-change="productsList.sortChanged(sort)" property="name" order="1"></products-sort>
@@ -10,7 +12,7 @@
       {{product.name}}
     </a>
     <p>{{product.description}}</p>
-    <product-remove product="product"></product-remove>
+    <product-remove product="product"  ng-show="productsList.isOwner(party)"></product-remove>
   </li>
 </ul>
 

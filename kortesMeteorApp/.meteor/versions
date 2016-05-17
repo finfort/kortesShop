@@ -1,6 +1,4 @@
 accounts-base@1.2.7
-accounts-google@1.0.9
-accounts-oauth@1.1.12
 accounts-password@1.1.8
 accounts-ui@1.1.9
 accounts-ui-unstyled@1.1.12
@@ -40,7 +38,6 @@ email@1.0.12
 es5-shim@4.5.10
 fastclick@1.0.11
 geojson-utils@1.0.8
-google@1.1.11
 hot-code-push@1.0.4
 html-tools@1.0.9
 htmljs@1.0.9
@@ -66,8 +63,6 @@ mongo@1.1.7
 mongo-id@1.0.4
 npm-bcrypt@0.8.5
 npm-mongo@1.4.43
-oauth@1.1.10
-oauth2@1.1.9
 observe-sequence@1.0.11
 ordered-dict@1.0.7
 pbastowski:angular-babel@1.3.4

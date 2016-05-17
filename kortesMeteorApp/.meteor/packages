@@ -19,7 +19,6 @@ angular-templates
 pbastowski:angular-babel
 accounts-password
 dotansimha:accounts-ui-angular
-accounts-google
 angular-meteor-auth
 accounts-base
 sanjo:jasmine
