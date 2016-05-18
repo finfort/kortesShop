@@ -1,19 +1,44 @@
-<product-add ng-show="productsList.isLoggedIn"></product-add>
-<div ng-hide="productsList.isLoggedIn">
-  Log in to add a product!
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-12">
+      <product-add ng-show="productsList.isLoggedIn"></product-add>
+      <div class="alert alert-warning" role="alert" ng-hide="productsList.isLoggedIn">
+        <strong>Warning!</strong> Log in to create a product!
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <h2>List of products:</h2>
+      <form class="form-inline">
+        <div class="form-group">
+          <input class="form-control" type="search" ng-model="productsList.searchText" placeholder="Search" />
+        </div>
+        <products-sort class="form-group" on-change="productsList.sortChanged(sort)" property="name" order="1"></products-sort>
+      </form>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+      <ul class="products">
+        <li dir-paginate="product in productsList.products | itemsPerPage: productsList.perPage" total-items="productsList.productsCount">
+           <div class="row">
+            <div class="col-sm-8">
+              <h3 class="product-name">
+                <a ui-sref="productDetails({ productId: product._id })">{{product.name}}</a>
+              </h3>
+              <p class="product-description">
+                {{product.description}}
+              </p>
+            </div>
+            <div class="col-sm-4">
+              <product-remove product="product" ng-show="productsList.isOwner(product)"></product-remove>
+            </div>
+          </div>
+        </li>
+      </ul>
+
+      <dir-pagination-controls on-page-change="productsList.pageChanged(newPageNumber)"></dir-pagination-controls>
+   </div>
+  </div>
 </div>
-<input type="search" ng-model="productsList.searchText" placeholder="Search" />
- 
-<products-sort on-change="productsList.sortChanged(sort)" property="name" order="1"></products-sort>
-
-<ul>
-  <li dir-paginate="product in productsList.products | itemsPerPage: productsList.perPage" total-items="productsList.productsCount">
-    <a ui-sref="productDetails({ productId: product._id })">
-      {{product.name}}
-    </a>
-    <p>{{product.description}}</p>
-    <product-remove product="product"  ng-show="productsList.isOwner(product)"></product-remove>
-  </li>
-</ul>
-
-<dir-pagination-controls on-page-change="productsList.pageChanged(newPageNumber)"></dir-pagination-controls>
