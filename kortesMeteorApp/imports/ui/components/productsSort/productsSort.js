@@ -23,7 +23,7 @@ const name = 'productsSort';
 export default angular.module(name, [
   angularMeteor
 ]).component(name, {
-  template,
+  templateUrl: `imports/ui/components/${name}/${name}.html`,
   bindings: {
     onChange: '&',
     property: '@',
