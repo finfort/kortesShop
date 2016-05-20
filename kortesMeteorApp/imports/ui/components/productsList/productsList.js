@@ -8,6 +8,7 @@ import { Products } from '../../../api/products/index';
 import { name as ProductAdd } from '../productAdd/productAdd';
 import { name as ProductRemove } from '../productRemove/productRemove';
 import { name as ProductsSort } from '../productsSort/productsSort';
+// import { name as ProductAddButton } from '../productAddButton/productAddButton';
 
 import './productsList.html';
 class ProductsList {
@@ -68,7 +69,8 @@ export default angular.module(name, [
     utilsPagination,
     ProductsSort,
     ProductAdd,
-    ProductRemove
+    ProductRemove//,
+    // ProductAddButton
 ]).component(name, {
     templateUrl: `imports/ui/components/${name}/${name}.html`,
     controllerAs: name,

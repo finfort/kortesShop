@@ -27,7 +27,8 @@ export default angular.module(name, [
   'accounts.ui', // dotansimha:accounts-ui-angular
   ProductAdd,
   ProductRemove,
-  ProductDetails
+  ProductDetails,
+  'ui.bootstrap'
 
 ]).component(name, {
   templateUrl: `imports/ui/components/${name}/${name}.html`,

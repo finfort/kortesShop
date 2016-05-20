@@ -13,6 +13,11 @@ class ProductAdd {
         this.product.owner = Meteor.user()._id;
         console.log('submit:', JSON.stringify(this.product));
         Products.insert(this.product);
+        
+        // if(this.done) {
+        //     this.done();
+        // }
+        
         this.reset();
     }
 
@@ -28,6 +33,9 @@ export default angular.module(name, [
     angularMeteor
 ]).component(name, {
     templateUrl: `imports/ui/components/${name}/${name}.html`,
+    // bindings: {
+    //     done: '&?'
+    // },
     controllerAs: name,
     controller: ProductAdd
 });
