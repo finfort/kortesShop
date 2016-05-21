@@ -9,6 +9,7 @@ import { name as ProductAdd } from '../productAdd/productAdd';
 import { name as ProductRemove } from '../productRemove/productRemove';
 import { name as ProductsSort } from '../productsSort/productsSort';
 // import { name as ProductAddButton } from '../productAddButton/productAddButton';
+import { name as ProductImage } from '../productImage/productImage';
 
 import './productsList.html';
 class ProductsList {
@@ -24,7 +25,9 @@ class ProductsList {
         };
 
         this.searchText = '';
-
+        this.subscribe('users');
+        this.subscribe('images');
+        
         this.subscribe('products', () => [{
             limit: parseInt(this.perPage),
             skip: parseInt((this.getReactively('page') - 1) * this.perPage),
@@ -69,7 +72,9 @@ export default angular.module(name, [
     utilsPagination,
     ProductsSort,
     ProductAdd,
-    ProductRemove//,
+    ProductRemove,
+    ProductImage
+    //,
     // ProductAddButton
 ]).component(name, {
     templateUrl: `imports/ui/components/${name}/${name}.html`,

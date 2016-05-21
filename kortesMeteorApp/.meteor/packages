@@ -27,3 +27,5 @@ velocity:console-reporter
 tmeasday:publish-counts
 less
 angularui:angular-ui-bootstrap
+jalik:ufs
+jalik:ufs-gridfs

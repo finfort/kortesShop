@@ -2,6 +2,8 @@ import angular from 'angular';
 import { Meteor } from 'meteor/meteor';
 import angularMeteor from 'angular-meteor';
 import { Products } from '../../../api/products/index';
+import { name as ProductUpload } from '../productUpload/productUpload';
+
 import './productAdd.html';
 
 class ProductAdd {
@@ -30,7 +32,8 @@ const name = 'productAdd';
 
 // create a module
 export default angular.module(name, [
-    angularMeteor
+    angularMeteor,
+    ProductUpload
 ]).component(name, {
     templateUrl: `imports/ui/components/${name}/${name}.html`,
     // bindings: {

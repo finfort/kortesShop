@@ -5,6 +5,9 @@ import { Products } from '../../../api/products/index';
 import './productRemove.html';
  
 class ProductRemove {
+  constructor(){
+  }
+  
   remove() {
     console.log('remove product' + JSON.stringify(this.product));
      if (this.product) {

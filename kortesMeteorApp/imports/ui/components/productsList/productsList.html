@@ -32,8 +32,13 @@
                 {{product.description}}
               </p>
             </div>
+             <div ng-if="product.images">
+              <div class="md-media-lg card-media">
+                <product-image images="product.images"></product-image>
+              </div>
+            </div>
             <div class="col-sm-4">
-              <product-remove product="product" ng-show="productsList.isOwner(product)"></product-remove>
+              <product-remove product="product" ng-hide="productsList.isOwner(product)"></product-remove>
             </div>
           </div>
         </li>
