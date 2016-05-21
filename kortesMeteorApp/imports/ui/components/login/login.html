@@ -1,26 +1,26 @@
- <form name="loginForm" layout="column" layout-fill layout-padding layout-margin>
-        <md-input-container>
+ <form name="loginForm" >
+        <div class="form-group">
           <label>
             Email
           </label>
           <input type="text" ng-model="login.credentials.email" aria-label="email" required/>
-        </md-input-container>
-        <md-input-container>
+        </div>
+        <div class="form-group">
           <label>
             Password
           </label>
           <input type="password" ng-model="login.credentials.password" aria-label="password" required/>
-        </md-input-container>
-        <div layout="row">
+        </div>
+        <div class="form-group">
           <a class="md-button" href="/password">Forgot password?</a>
-          <md-button class="md-raised md-primary" ng-click="login.login()" aria-label="login" ng-disabled="login.loginForm.$invalid()">Sign In
-          </md-button>
+          <button  class="btn btn-default" ng-click="login.login()" aria-label="login" ng-disabled="login.loginForm.$invalid()">Sign In
+          </button>
         </div>
 </form>
-      <md-toolbar ng-show="login.error" class="md-warn" layout="row" layout-fill layout-padding layout-margin>
-        <p class="md-body-1">{{ login.error }}</p>
-      </md-toolbar>
-      <md-divider></md-divider>
-      <div layout="row" layout-align="center">
-        <a class="md-button" href="/register">Need an account?</a>
+      <div class="has-error" ng-show="login.error">
+        <p>{{ login.error }}</p>
+      </div>
+      
+      <div>
+        <a class="btn" href="/register">Need an account?</a>
       </div>
