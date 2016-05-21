@@ -2,13 +2,11 @@ import angular from 'angular';
 import angularMeteor from 'angular-meteor';
 import uiRouter from 'angular-ui-router';
  
-import { Meteor } from 'meteor/meteor';
+import { Accounts } from 'meteor/accounts-base';
  
-import template from './login.html';
+import template from './password.html';
  
-import { name as Register } from '../register/register';
- 
-class Login {
+class Register {
   constructor($scope, $reactive, $state) {
     'ngInject';
  
@@ -17,27 +15,24 @@ class Login {
     $reactive(this).attach($scope);
  
     this.credentials = {
-      email: '',
-      password: ''
+      email: ''
     };
  
     this.error = '';
   }
  
-  login() {
-    Meteor.loginWithPassword(this.credentials.email, this.credentials.password,
-      this.$bindToContext((err) => {
-        if (err) {
-          this.error = err;
-        } else {
-          this.$state.go('products');
-        }
-      })
-    );
+  reset() {
+    Accounts.forgotPassword(this.credentials, this.$bindToContext((err) => {
+      if (err) {
+        this.error = err;
+      } else {
+        this.$state.go('products');
+      }
+    }));
   }
 }
  
-const name = 'login';
+const name = 'password';
  
 // create a module
 export default angular.module(name, [
@@ -47,15 +42,15 @@ export default angular.module(name, [
   .component(name, {
     templateUrl: `imports/ui/components/${name}/${name}.html`,
     controllerAs: name,
-    controller: Login
+    controller: Register
   })
   .config(config);
  
 function config($stateProvider) {
   'ngInject';
  
-  $stateProvider.state('login', {
-    url: '/login',
-    template: '<login></login>'
+  $stateProvider.state('password', {
+    url: '/password',
+    template: '<password></password>'
   });
 }
