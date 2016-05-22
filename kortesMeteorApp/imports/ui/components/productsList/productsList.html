@@ -23,7 +23,7 @@
     <div class="col-md-6">
       <ul class="products">
         <li dir-paginate="product in productsList.products | itemsPerPage: productsList.perPage" total-items="productsList.productsCount">
-           <div class="row">
+          <div class="row">
             <div class="col-sm-8">
               <h3 class="product-name">
                 <a ui-sref="productDetails({ productId: product._id })">{{product.name}}</a>
@@ -32,7 +32,7 @@
                 {{product.description}}
               </p>
             </div>
-             <div ng-if="product.images">
+            <div ng-if="product.images">
               <div class="">
                 <product-image images="product.images"></product-image>
               </div>
@@ -45,6 +45,6 @@
       </ul>
 
       <dir-pagination-controls on-page-change="productsList.pageChanged(newPageNumber)"></dir-pagination-controls>
-   </div>
+    </div>
   </div>
 </div>

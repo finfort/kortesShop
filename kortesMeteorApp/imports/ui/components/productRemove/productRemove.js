@@ -1,23 +1,23 @@
 import angular from 'angular';
 import angularMeteor from 'angular-meteor';
 import { Products } from '../../../api/products/index';
- 
+
 import './productRemove.html';
- 
+
 class ProductRemove {
-  constructor(){
+  constructor() {
   }
-  
+
   remove() {
     console.log('remove product' + JSON.stringify(this.product));
-     if (this.product) {
+    if (this.product) {
       Products.remove(this.product._id);
     }
   }
 }
- 
+
 const name = 'productRemove';
- 
+
 // create a module
 export default angular.module(name, [
   angularMeteor

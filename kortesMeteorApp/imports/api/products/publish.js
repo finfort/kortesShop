@@ -26,15 +26,15 @@ if (Meteor.isServer) {
             }]
         }]
     };
-    
+
     // mongo regex for searching products by name
-     if (typeof searchString === 'string' && searchString.length) {
+    if (typeof searchString === 'string' && searchString.length) {
       selector.name = {
         $regex: `.*${searchString}.*`,
-        $options : 'i'
+        $options: 'i'
       };
     }
-    
+
     //https://github.com/percolatestudio/publish-counts query only  products that should be available to that specific client
     Counts.publish(this, 'numberOfProducts', Products.find(selector), {
       noReady: true

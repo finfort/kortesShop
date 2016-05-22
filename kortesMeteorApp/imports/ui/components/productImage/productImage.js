@@ -1,14 +1,14 @@
 import angular from 'angular';
 import angularMeteor from 'angular-meteor';
- 
+
 import template from './productImage.html';
 import { Images } from '../../../api/images';
- 
+
 class ProductImage {
   constructor($scope, $reactive) {
     'ngInject';
     $reactive(this).attach($scope);
- 
+
     this.helpers({
       mainImage() {
         const images = this.getReactively('images', true);
@@ -21,9 +21,9 @@ class ProductImage {
     });
   }
 }
- 
+
 const name = 'productImage';
- 
+
 // create a module
 export default angular.module(name, [
   angularMeteor

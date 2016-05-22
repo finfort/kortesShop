@@ -15,11 +15,11 @@ class ProductAdd {
         this.product.owner = Meteor.user()._id;
         console.log('submit:', JSON.stringify(this.product));
         Products.insert(this.product);
-        
+
         // if(this.done) {
         //     this.done();
         // }
-        
+
         this.reset();
     }
 

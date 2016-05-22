@@ -27,7 +27,7 @@ class ProductsList {
         this.searchText = '';
         this.subscribe('users');
         this.subscribe('images');
-        
+
         this.subscribe('products', () => [{
             limit: parseInt(this.perPage),
             skip: parseInt((this.getReactively('page') - 1) * this.perPage),
@@ -57,7 +57,7 @@ class ProductsList {
     sortChanged(sort) {
         this.sort = sort;
     }
-    
+
     isOwner(product) {
         return this.isLoggedIn && product.owner === this.currentUserId;
     }

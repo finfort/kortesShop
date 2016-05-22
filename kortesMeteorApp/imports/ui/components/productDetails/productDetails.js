@@ -7,11 +7,11 @@ import './productDetails.html';
 class ProductDetails {
     constructor($stateParams, $scope, $reactive) {
         'ngInject';
-        
+
         $reactive(this).attach($scope);
 
         this.productId = $stateParams.productId;
-        
+
         this.subscribe('products');
         this.subscribe('users');
 

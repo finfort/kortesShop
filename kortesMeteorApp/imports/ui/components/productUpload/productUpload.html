@@ -1,14 +1,6 @@
 <div class="row">
-   <div ngf-drop
-    ngf-select
-    ngf-change="productUpload.addImages($files)"
-    ngf-drag-over-class="{accept:'dragover', reject:'dragover-err', delay:100}"
-    class="drop-box"
-    ngf-multiple="false"
-    ngf-allow-dir="false"
-    ngf-accept="'image/*'"
-    ngf-drop-available="true"
-    ng-hide="productUpload.cropImgSrc">
+  <div ngf-drop ngf-select ngf-change="productUpload.addImages($files)" ngf-drag-over-class="{accept:'dragover', reject:'dragover-err', delay:100}"
+    class="drop-box" ngf-multiple="false" ngf-allow-dir="false" ngf-accept="'image/*'" ngf-drop-available="true" ng-hide="productUpload.cropImgSrc">
     <div>Click here to select image</div>
     <div>
       <strong>OR</strong>
@@ -31,7 +23,7 @@
   </div>
   <div class="images-container-title" sv-root sv-part="productUpload.thumbs">
     <div sv-element class="product-image-container" ng-class="{'main-image': $index === 0}" ng-repeat="thumb in productUpload.thumbs">
-      <img draggable="false" ng-src="{{ thumb.url }}"/>
+      <img draggable="false" ng-src="{{ thumb.url }}" />
     </div>
   </div>
 </div>

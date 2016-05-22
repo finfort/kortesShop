@@ -1,26 +1,26 @@
- <form name="loginForm" >
-        <div class="form-group">
-          <label>
+<form name="loginForm">
+  <div class="form-group">
+    <label>
             Email
           </label>
-          <input type="text" ng-model="login.credentials.email" aria-label="email" required/>
-        </div>
-        <div class="form-group">
-          <label>
+    <input type="text" ng-model="login.credentials.email" aria-label="email" required/>
+  </div>
+  <div class="form-group">
+    <label>
             Password
           </label>
-          <input type="password" ng-model="login.credentials.password" aria-label="password" required/>
-        </div>
-        <div class="form-group">
-          <a class="md-button" href="/password">Forgot password?</a>
-          <button  class="btn btn-default" ng-click="login.login()" aria-label="login" ng-disabled="login.loginForm.$invalid()">Sign In
+    <input type="password" ng-model="login.credentials.password" aria-label="password" required/>
+  </div>
+  <div class="form-group">
+    <a class="md-button" href="/password">Forgot password?</a>
+    <button class="btn btn-default" ng-click="login.login()" aria-label="login" ng-disabled="login.loginForm.$invalid()">Sign In
           </button>
-        </div>
+  </div>
 </form>
-      <div class="has-error" ng-show="login.error">
-        <p>{{ login.error }}</p>
-      </div>
-      
-      <div>
-        <a class="btn" href="/register">Need an account?</a>
-      </div>
+<div class="has-error" ng-show="login.error">
+  <p>{{ login.error }}</p>
+</div>
+
+<div>
+  <a class="btn" href="/register">Need an account?</a>
+</div>
