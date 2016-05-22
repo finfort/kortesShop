@@ -16,6 +16,6 @@ Thumbs.allow({
  
 Images.allow({
   insert: loggedIn,
-  update: FloggedIn,
+  update: loggedIn,
   remove: loggedIn
 });
