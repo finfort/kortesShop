@@ -29,7 +29,7 @@
       <img-crop image="productUpload.cropImgSrc" result-image="productUpload.myCroppedImage" area-type="square"></img-crop>
     </div>
   </div>
-  <div layout="row" class="images-container-title" sv-root sv-part="productUpload.thumbs">
+  <div class="images-container-title" sv-root sv-part="productUpload.thumbs">
     <div sv-element class="product-image-container" ng-class="{'main-image': $index === 0}" ng-repeat="thumb in productUpload.thumbs">
       <img draggable="false" ng-src="{{ thumb.url }}"/>
     </div>

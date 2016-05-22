@@ -28,7 +28,7 @@ const name = 'productImage';
 export default angular.module(name, [
   angularMeteor
 ]).component(name, {
-  template,
+  templateUrl: `imports/ui/components/${name}/${name}.html`,
   bindings: {
     images: '<'
   },
