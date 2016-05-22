@@ -58,6 +58,7 @@ class ProductsList {
         this.sort = sort;
     }
 
+    // something wrong here ->
     isOwner(product) {
         return this.isLoggedIn && product.owner === this.currentUserId;
     }
