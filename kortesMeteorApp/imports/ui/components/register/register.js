@@ -16,7 +16,14 @@ class Register {
 
     this.credentials = {
       email: '',
-      password: ''
+      password: '',
+      fullName: '',
+      registrationDate: new Date(),
+      dealerGroup: '',
+      staffGroup: '',
+      isActive: true,
+      phone: '',
+      internalNotes: ''
     };
 
     this.error = '';
@@ -25,6 +32,17 @@ class Register {
   register() {
     Accounts.createUser(this.credentials,
       this.$bindToContext((err) => {
+        Meteor.users.update(Meteor.userId(), {
+          $set: {
+            fullName: this.credentials.fullName,
+            registrationDate: this.credentials.registrationDate,
+            dealerGroup: this.credentials.dealerGroup,
+            staffGroup: this.credentials.staffGroup,
+            isActive: this.credentials.isActive,
+            phone: this.credentials.phone,
+            internalNotes: this.credentials.internalNotes
+          }
+        });
         if (err) {
           this.error = err;
         } else {

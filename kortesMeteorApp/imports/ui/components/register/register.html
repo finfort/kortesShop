@@ -11,6 +11,19 @@
           </label>
     <input type="password" ng-model="register.credentials.password" placeholder="password" aria-label="password" required/>
   </div>
+  <div>
+    <label for="fullName">fullName:</label>
+    <input type="text" ng-model="register.credentials.fullName" placeholder="fullName" aria-label="fullName" required>
+  </div>
+  <div>
+    <label for="registrationDate">registrationDate:</label>
+    <input type="text" ng-model="register.credentials.registrationDate" placeholder="registrationDate" aria-label="registrationDate"
+      required>
+  </div>
+  <div>
+    <label for="phone">phone:</label>
+    <input type="text" ng-model="register.credentials.phone" placeholder="phone" aria-label="phone" required>
+  </div>
   <div class="row">
     <button class="btn btn-primary" ng-click="register.register()" aria-label="login" ng-disabled="register.registerForm.$invalid()">Register</button>
   </div>
