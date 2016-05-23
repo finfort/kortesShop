@@ -4,8 +4,10 @@ import uiRouter from 'angular-ui-router';
 
 import './kortesshop.html';
 
+import { name as FooterContent } from '../footerContent/footerContent';
+import { name as HeaderContent } from '../headerContent/headerContent';
+
 import { name as ProductsList } from '../productsList/productsList';
-import { name as Navigation } from '../navigation/navigation';
 import { name as Login } from '../login/login';
 import { name as ProductAdd } from '../productAdd/productAdd';
 import { name as ProductRemove } from '../productRemove/productRemove';
@@ -23,13 +25,14 @@ export default angular.module(name, [
   uiRouter,
   ProductsList,
   Login,
-  Navigation,
   'accounts.ui', // dotansimha:accounts-ui-angular
   ProductAdd,
   ProductRemove,
   ProductDetails,
   'ui.bootstrap',
-  Auth
+  Auth,
+  FooterContent,
+  HeaderContent
 
 ]).component(name, {
   templateUrl: `imports/ui/components/${name}/${name}.html`,
