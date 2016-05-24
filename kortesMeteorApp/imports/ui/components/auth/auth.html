@@ -1,6 +1,6 @@
 <li>
   <button class="btn" ui-sref="login" ng-hide="auth.isLoggedIn">Login</button>
   <button class="btn" ui-sref="register" ng-hide="auth.isLoggedIn">Sign up</button>
+  <a href="/profile" ng-show="auth.isLoggedIn">{{ auth.currentUser | displayNameFilter }}</a>
   <button class="btn" ng-click="auth.logout()" ng-show="auth.isLoggedIn">Logout</button>
-  <div ng-show="auth.isLoggedIn">{{ auth.currentUser | displayNameFilter }}</div>
 </li>

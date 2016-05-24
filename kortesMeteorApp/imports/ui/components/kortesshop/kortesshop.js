@@ -13,6 +13,7 @@ import { name as ProductAdd } from '../productAdd/productAdd';
 import { name as ProductRemove } from '../productRemove/productRemove';
 import { name as ProductDetails } from '../productDetails/productDetails';
 import { name as Auth } from '../auth/auth';
+import { name as Profile } from '../profile/profile';
 
 class KortesShop {
 
@@ -32,7 +33,8 @@ export default angular.module(name, [
   'ui.bootstrap',
   Auth,
   FooterContent,
-  HeaderContent
+  HeaderContent,
+  Profile
 
 ]).component(name, {
   templateUrl: `imports/ui/components/${name}/${name}.html`,
