@@ -1,2 +1,8 @@
- fullName
- <input type="text" ng-model="profile.currentUser | json" aria-label="fullName" required/>
+ email <label for="">{{profile.currentUser.emails[0].address}}</label>
+<br> fullName: <label for="">{{profile.currentUser.fullName}}</label>
+<br> registrationDate: <label for="">{{profile.currentUser.registrationDate}}</label>
+<br> dealerGroup: <label for="">{{profile.currentUser.dealerGroup}}</label>
+<br> staffGroup: <label for="">{{profile.currentUser.staffGroup}}</label>
+<br> isActive: <label for="">{{profile.currentUser.isActive}}</label>
+<br> phone: <label for="">{{profile.currentUser.phone}}</label>
+<br> internalNotes: <label for="">{{profile.currentUser.internalNotes}}</label>

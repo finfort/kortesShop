@@ -11,34 +11,36 @@ import profile from './profile.html';
 const name = 'profile';
 
 class Profile {
-  constructor($scope, $reactive) {
-    'ngInject';
-    
-    var userProfile = Meteor.user();
+    constructor($scope, $reactive) {
+        'ngInject';
 
-    $reactive(this).attach($scope);
+        var userProfile = Meteor.user();
 
-    this.helpers({
-      isLoggedIn() {
-        return !!Meteor.userId();
-      },
-      currentUser() {
-        return Meteor.user();
-      }
-    });
-  }
+        $reactive(this).attach($scope);
 
-  
+        this.subscribe('users');
+
+        this.helpers({
+            isLoggedIn() {
+                return !!Meteor.userId();
+            },
+            currentUser() {
+                return Meteor.user();
+            }
+        });
+    }
+
+
 }
 
 // create a module
 export default angular.module(name, [
-  angularMeteor,
-  DisplayNameFilter,
+    angularMeteor,
+    DisplayNameFilter,
 ]).component(name, {
-  templateUrl: `imports/ui/components/${name}/${name}.html`,
-  controllerAs: name,
-  controller: Profile
+    templateUrl: `imports/ui/components/${name}/${name}.html`,
+    controllerAs: name,
+    controller: Profile
 })
     .config(config);
 
