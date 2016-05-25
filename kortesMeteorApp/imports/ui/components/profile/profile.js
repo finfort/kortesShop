@@ -29,6 +29,27 @@ class Profile {
             }
         });
     }
+    save() {
+        Meteor.users.update({
+            _id: Meteor.userId() //Get the current user id, or null if no user is logged in. A reactive data source.
+        }, {
+                $set: {
+                    fullName: this.currentUser.fullName,
+                    registrationDate: this.currentUser.registrationDate,
+                    dealerGroup: this.currentUser.dealerGroup,
+                    staffGroup: this.currentUser.staffGroup,
+                    isActive: this.currentUser.isActive,
+                    phone: this.currentUser.phone,
+                    internalNotes: this.currentUser.internalNotesphone
+                }
+            }, (error) => {
+                if (error) {
+                    console.log('Oops, unable to update the user...');
+                } else {
+                    console.log('Done updating user!');
+                }
+            });
+    }
 
 
 }

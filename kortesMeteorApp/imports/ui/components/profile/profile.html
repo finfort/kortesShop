@@ -1,8 +1,14 @@
- email <label for="">{{profile.currentUser.emails[0].address}}</label>
-<br> fullName: <label for="">{{profile.currentUser.fullName}}</label>
-<br> registrationDate: <label for="">{{profile.currentUser.registrationDate}}</label>
-<br> dealerGroup: <label for="">{{profile.currentUser.dealerGroup}}</label>
-<br> staffGroup: <label for="">{{profile.currentUser.staffGroup}}</label>
-<br> isActive: <label for="">{{profile.currentUser.isActive}}</label>
-<br> phone: <label for="">{{profile.currentUser.phone}}</label>
-<br> internalNotes: <label for="">{{profile.currentUser.internalNotes}}</label>
+<form>
+    <label for="email">email:</label> {{profile.currentUser.emails[0].address}} Not editable wright now
+
+    <br> <label for="fullName">fullName:</label><input id="fullName" type="text" ng-model="profile.currentUser.fullName">
+    <br> <label for="registrationDate">registrationDate:</label><input id="registrationDate" type="text" ng-model="profile.currentUser.registrationDate">
+    <br> <label for="dealerGroup">dealerGroup:</label><input id="dealerGroup" type="text" ng-model="profile.currentUser.dealerGroup">
+    <br> <label for="staffGroup">staffGroup:</label> <input id="staffGroup" type="text" ng-model="profile.currentUser.staffGroup">
+    <br> <label for="isActive">isActive:</label> <input id="isActive" type="text" ng-model="profile.currentUser.isActive">
+    <br> <label for="phone">phone:</label> <input id="phone" type="text" ng-model="profile.currentUser.phone">
+    <br> <label for="internalNotes">internalNotes:</label> <input id="internalNotes" type="text" ng-model="profile.currentUser.internalNotes">
+    <br>
+    <button ng-click="profile.save()" type="submit" class="btn btn-primary">Save</button>
+    <button ui-sref="products" class="btn">Back</button>
+</form>
