@@ -46,6 +46,9 @@ class ProductsList {
             },
             isLoggedIn() {
                 return !!Meteor.userId();
+            },
+            currentUserId() {
+                return Meteor.userId();
             }
         });
     }
