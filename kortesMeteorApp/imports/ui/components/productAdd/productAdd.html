@@ -1,20 +1,42 @@
 <form>
   <div class="form-group">
-    <label>
-      Product Name:
-    </label>
-    <input type="text" ng-model="productAdd.product.name" class="form-control" />
+    <label for="title">Product title</label>
+    <input id="title" type="text" ng-model="productDetails.product.title" class="form-control" />
   </div>
   <div class="form-group">
-    <label>
+    <label for="pageTitle">
+      Product pageTitle:
+    </label>
+    <input id="pageTitle" type="text" ng-model="productAdd.product.pageTitle" class="form-control" />
+  </div>
+  <div class="form-group">
+    <label for="description">
       Description:
     </label>
-    <input type="text" ng-model="productAdd.product.description" class="form-control" />
+    <input id="description" type="text" ng-model="productAdd.product.description" class="form-control" />
   </div>
-  <div class="checkbox">
-    <label>
-      <input type="checkbox" ng-model="productAdd.product.public"/> Public Product?
+  <div class="form-group">
+    <label for="type">
+      Type:
     </label>
+    <input id="type" type="text" ng-model="productAdd.product.type" class="form-control" />
+  </div>
+  <div class="form-group">
+    <label for="vendor">
+      Vendor:
+    </label>
+    <input id="vendor" type="text" ng-model="productAdd.product.vendor" class="form-control" />
+  </div>
+  <div class="form-group">
+    <label for="price">
+      Price:
+    </label>
+    <input id="price" type="text" ng-model="productAdd.product.price" class="form-control" />
+  </div>
+  <div class="form-group">
+    <label for="isVisible">Product isVisible?</label>
+    <input type="checkbox" id="isVisible" ng-model="productAdd.product.isVisible" />
+
   </div>
   <product-upload files="productAdd.product.images"></product-upload>
   <button ng-click="productAdd.submit()" class="btn btn-success">Add Product!</button>

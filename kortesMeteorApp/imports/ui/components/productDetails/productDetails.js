@@ -35,9 +35,10 @@ class ProductDetails {
             _id: this.product._id
         }, {
                 $set: {
-                    name: this.product.name,
+                    title: this.product.title,
                     description: this.product.description,
-                    public: this.product.public
+                    isVisible: this.product.isVisible,
+                    price: this.product.price
                 }
             }, (error) => {
                 if (error) {
@@ -50,15 +51,15 @@ class ProductDetails {
 }
 
 
-const name = 'productDetails';
+const title = 'productDetails';
 
 // create a module
-export default angular.module(name, [
+export default angular.module(title, [
     angularMeteor,
     uiRouter
-]).component(name, {
-    templateUrl: `imports/ui/components/${name}/${name}.html`,
-    controllerAs: name,
+]).component(title, {
+    templateUrl: `imports/ui/components/${title}/${title}.html`,
+    controllerAs: title,
     controller: ProductDetails
 })
     .config(config);

@@ -15,7 +15,7 @@
         <div class="form-group">
           <input class="form-control" type="search" ng-model="productsList.searchText" placeholder="Search" />
         </div>
-        <products-sort class="form-group" on-change="productsList.sortChanged(sort)" property="name" order="1"></products-sort>
+        <products-sort class="form-group" on-change="productsList.sortChanged(sort)" property="title" order="1"></products-sort>
       </form>
     </div>
   </div>
@@ -25,12 +25,14 @@
         <li dir-paginate="product in productsList.products | itemsPerPage: productsList.perPage" total-items="productsList.productsCount">
           <div class="row">
             <div class="col-sm-8">
-              <h3 class="product-name">
-                <a ui-sref="productDetails({ productId: product._id })">{{product.name}}</a>
+              <h3 class="product-title">
+                <a ui-sref="productDetails({ productId: product._id })">{{product.title}}</a>
               </h3>
               <p class="product-description">
                 {{product.description}}
               </p>
+              Price:
+              <span>{{product.price}}</span>
             </div>
             <div ng-if="product.images">
               <div class="">

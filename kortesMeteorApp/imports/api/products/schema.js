@@ -34,6 +34,10 @@ Schema.Product = new SimpleSchema({
     type: String,
     optional: true
   },
+  owner: {
+      type:String,
+      optional: true
+  },
   // metafields: {
   //   type: [ReactionCore.Schemas.Metafield],
   //   optional: true
