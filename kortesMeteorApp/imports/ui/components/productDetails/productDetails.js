@@ -12,14 +12,27 @@ class ProductDetails {
 
         this.productId = $stateParams.productId;
 
-        this.subscribe('products');
+        // this.subscribe('products');
+        this.subscribe('products', () => [], {
+            onReady: function () {
+                this.helpers({
+                    product: () => {
+                        var locProductsSub = Products.findOne({ _id: this.productId });
+                        console.dir(locProductsSub);
+                        return locProductsSub;
+                    }
+                });
+            }
+        });
         this.subscribe('users');
 
         this.helpers({
             product() {
-                return Products.findOne({
-                    _id: $stateParams.productId
+                var curProduct = Products.findOne({
+                    _id: this.productId
                 });
+                return curProduct;
+
             },
             users() {
                 return Meteor.users.find({});
