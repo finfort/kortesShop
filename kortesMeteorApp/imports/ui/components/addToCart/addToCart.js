@@ -12,6 +12,9 @@ class AddToCart {
         $reactive(this).attach($scope);
 
         // this.attrs = attrs;
+// http://www.befundoo.com/university/tutorials/angularjs-2-services/
+// http://plnkr.co/edit/yMjghOFhFWuY8G1fVIEg?p=preview
+// http://stackoverflow.com/questions/34900338/how-to-inject-upgraded-angular-1-service-factory-to-angular-2-component-in-es5
 
 
         if (this.inCart()) {
