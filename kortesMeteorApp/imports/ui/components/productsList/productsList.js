@@ -11,6 +11,8 @@ import { name as ProductsSort } from '../productsSort/productsSort';
 // import { name as ProductAddButton } from '../productAddButton/productAddButton';
 import { name as ProductImage } from '../productImage/productImage';
 
+import { name as AddToCart } from '../addToCart/addToCart';
+
 import './productsList.html';
 class ProductsList {
     constructor($scope, $reactive) {
@@ -76,9 +78,8 @@ export default angular.module(name, [
     ProductsSort,
     ProductAdd,
     ProductRemove,
-    ProductImage
-    //,
-    // ProductAddButton
+    ProductImage,
+    AddToCart
 ]).component(name, {
     templateUrl: `imports/ui/components/${name}/${name}.html`,
     controllerAs: name,
