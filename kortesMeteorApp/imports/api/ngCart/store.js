@@ -28,12 +28,13 @@ class Store {
 
 }
 
-const name = 'store';
+const name = 'ngCart';
+// const name = 'store';
 
 // create a module
 export default angular.module(name, [
     angularMeteor
-]).component(name, {
+]).service(name, {
     controllerAs: name,
     controller: Store
 });

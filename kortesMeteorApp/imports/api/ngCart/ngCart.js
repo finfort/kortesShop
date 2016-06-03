@@ -2,13 +2,16 @@ import { name as ngCartItem } from './ngCartItem';
 import { name as store } from './store';
 
 class NgCart {
-    constructor($scope, $reactive, $window) {
+    constructor($reactive, $window) {//$scope,
+        // This controller throws an unknown provider error because
+        // a scope object cannot be injected into a service.
+
         'ngInject';
-        $reactive(this).attach($scope);
+        // $reactive(this).attach($scope);
     }
 
     $onInit() {
-        //  $rootScope.$on('ngCart:change', function(){
+        //  $rootScope.$on('ngCart:change', function(){ // i shouldn't user rooutscope here
         //     ngCart.$save();
         // });
         if (angular.isObject(store.get('cart'))) {
@@ -26,6 +29,8 @@ class NgCart {
             items: []
         };
     };
+
+
 
     addItem(id, name, price, quantity, data) {
 
@@ -197,7 +202,4 @@ export default angular.module(name, [
     angularMeteor,
     ngCartItem,
     store
-]).component(name, {
-    controllerAs: name,
-    controller: NgCart
-});
+]).service(name, NgCart);

@@ -110,12 +110,13 @@ class NgCartItem {
 
 }
 
-const name = 'ngCartItem';
+const name = 'ngCart';
+// const name = 'ngCartItem';
 
 // create a module
 export default angular.module(name, [
     angularMeteor
-]).component(name, {
+]).service(name, {
     controllerAs: name,
     controller: NgCartItem
 });
