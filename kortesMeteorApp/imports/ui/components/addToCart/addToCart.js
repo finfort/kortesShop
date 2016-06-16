@@ -1,19 +1,24 @@
 import * as angular  from 'angular';
 import angularMeteor from 'angular-meteor';
 
-import { name as ngCart } from '../../../api/ngCart/ngCart';
+import { name as NgCart } from '../../../api/ngCart/ngCart';
 
 
 import './addToCart.html';
 class AddToCart {
-    constructor($scope, $reactive, ngCart) {//
-        //ngCart object here should service return function?
+    constructor($scope, $reactive, NgCart) {//NgCart
+        //NgCart object here should service return function?
         //angular_angular.js?hash=08f63d2…:13439 TypeError: _apiNgCartNgCart.name.getItemById is not a function
         'ngInject';
+        this.NgCart = NgCart;
         //$reactive(this).attach($scope);
-        
+
+
+    }
+
+    $onInit() {
         if (this.inCart()) {
-            this.q = ngCart.getItemById(this.id).getQuantity();
+            this.q = this.NgCart.getItemById(this.id).getQuantity();
         } else {
             this.q = parseInt(this.quantity);
         }
@@ -22,21 +27,25 @@ class AddToCart {
         for (var i = 1; i <= this.quantityMax; i++) {
             this.qtyOpt.push(i);
         }
+
     }
 
     inCart() {
-        console.log("cart " + ngCart);
-        return ngCart.getItemById(this.id);
+        console.log("cart " + this.NgCart);
+        console.dir(this.NgCart);
+        return this.NgCart.getItemById(this.id);
     }
 
 }
+
+AddToCart.$inject = ['NgCart'];
 
 const name = 'addToCart';
 
 // create a module
 export default angular.module(name, [
     angularMeteor,
-    ngCart
+    NgCart
 ]).component(name, {
     templateUrl: `imports/ui/components/${name}/${name}.html`,
     controllerAs: name,

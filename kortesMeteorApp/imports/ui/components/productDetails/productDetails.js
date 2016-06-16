@@ -2,6 +2,9 @@ import angular from 'angular';
 import angularMeteor from 'angular-meteor';
 import uiRouter from 'angular-ui-router';
 import { Products } from '../../../api/products/index';
+import { name as ProductMap } from '../productMap/productMap';
+
+
 import './productDetails.html';
 
 class ProductDetails {
@@ -18,7 +21,6 @@ class ProductDetails {
                 this.helpers({
                     product: () => {
                         var locProductsSub = Products.findOne({ _id: this.productId });
-                        console.dir(locProductsSub);
                         return locProductsSub;
                     }
                 });
@@ -51,7 +53,8 @@ class ProductDetails {
                     title: this.product.title,
                     description: this.product.description,
                     isVisible: this.product.isVisible,
-                    price: this.product.price
+                    price: this.product.price,
+                    prlocation: this.product.prlocation
                 }
             }, (error) => {
                 if (error) {
@@ -69,7 +72,8 @@ const title = 'productDetails';
 // create a module
 export default angular.module(title, [
     angularMeteor,
-    uiRouter
+    uiRouter,
+    ProductMap
 ]).component(title, {
     templateUrl: `imports/ui/components/${title}/${title}.html`,
     controllerAs: title,

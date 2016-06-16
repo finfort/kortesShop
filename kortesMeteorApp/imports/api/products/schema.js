@@ -35,8 +35,8 @@ Schema.Product = new SimpleSchema({
     optional: true
   },
   owner: {
-      type:String,
-      optional: true
+    type: String,
+    optional: true
   },
   // metafields: {
   //   type: [ReactionCore.Schemas.Metafield],
@@ -88,6 +88,13 @@ Schema.Product = new SimpleSchema({
     defaultValue: true,
     optional: true
   },
+  prlocation: {
+    label: "Position of product on map",
+    type: Object,
+    optional: true,
+    blackbox: true
+  },
+
   // parcel: {
   //   type: ReactionCore.Schemas.ShippingParcel,
   //   optional: true
@@ -156,3 +163,4 @@ Schema.Product = new SimpleSchema({
 });
 
 Products.attachSchema(Schema.Product);
+SimpleSchema.debug = true
