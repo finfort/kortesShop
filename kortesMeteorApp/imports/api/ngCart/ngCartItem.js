@@ -1,25 +1,25 @@
 class NgCartItem {
-    constructor($reactive, id, name, price, quantity, data, $log) {
+    constructor($reactive,  $log) {
         'ngInject';
 
         // $reactive(this).attach($scope);
-        debugger;
+        // debugger;
         this.$log = $log;
 
+        // this.setId(id);
+        // this.setName(name);
+        // this.setPrice(price);
+        // this.setQuantity(quantity);
+        // this.setData(data);
+    };
+
+    item (id, name, price, quantity, data) {
         this.setId(id);
         this.setName(name);
         this.setPrice(price);
         this.setQuantity(quantity);
         this.setData(data);
     };
-
-    // item (id, name, price, quantity, data) {
-    //     this.setId(id);
-    //     this.setName(name);
-    //     this.setPrice(price);
-    //     this.setQuantity(quantity);
-    //     this.setData(data);
-    // };
 
 
     setId(id) {

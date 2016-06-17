@@ -2,12 +2,13 @@ import { name as ngCartItem } from './ngCartItem';
 import { name as storeService } from './store';
 
 class NgCart {
-    
-    constructor($reactive, $window, storeService) {
+
+    constructor($reactive, $window, storeService, ngCartItem) {
         'ngInject';
         // $reactive(this).attach($scope);
         // console.log("ngcart service constructor");
         store = storeService;
+        ngCartItem  = ngCartItem;
 
         //  $rootScope.$on('ngCart:change', function(){ // i shouldn't user rooutscope here
         //     ngCart.$save();
@@ -19,7 +20,7 @@ class NgCart {
         }
     }
 
-    init () {
+    init() {
         // debugger;
         this.$cart = {
             shipping: null,
@@ -39,14 +40,14 @@ class NgCart {
             inCart.setQuantity(quantity, false);
             // $rootScope.$broadcast('ngCart:itemUpdated', inCart);
         } else {
-            var newItem = new ngCartItem(id, name, price, quantity, data);
+            var newItem = ngCartItem.item(id, name, price, quantity, data);
             this.$cart.items.push(newItem);
             // $rootScope.$broadcast('ngCart:itemAdded', newItem);
         }
         // $rootScope.$broadcast('ngCart:change', {});
     };
 
-    getItemById (itemId) {
+    getItemById(itemId) {
         // debugger;
         var items = this.getCart().items;
         var build = false;
@@ -192,7 +193,7 @@ class NgCart {
     }
 
 
-    
+
 }
 
 const name = 'NgCart';
@@ -201,5 +202,5 @@ const name = 'NgCart';
 export default angular.module(name, [
     angularMeteor,
     storeService,
-    ngCartItem  
+    ngCartItem
 ]).service(name, NgCart);

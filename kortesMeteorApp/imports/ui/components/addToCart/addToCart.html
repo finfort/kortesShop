@@ -6,11 +6,11 @@
     <div>
         <span ng-show="addToCart.quantityMax">
             <select name="addToCart.quantity" id="addToCart.quantity" ng-model="q"
-                    ng-options=" v for v in qtyOpt"></select>
+                    ng-options=" v for v in addToCart.qtyOpt"></select>
         </span>
         <a class="btn btn-sm btn-primary"
-           ng-click="addToCart.ngCart.addItem(id, name, price, q, data)"
-           ></a>
+           ng-click="addToCart.NgCart.addItem(addToCart.id, addToCart.name, addToCart.price, addToCart.q, addToCart.data)"
+           >Add to Cart</a>
     </div>
     <mark  ng-show="addToCart.inCart()">
         This item is in your cart. <a ng-click="ngCart.removeItemById(id)" style="cursor: pointer;">Remove</a>
