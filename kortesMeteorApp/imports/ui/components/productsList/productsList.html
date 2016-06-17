@@ -42,7 +42,7 @@
             <div class="col-sm-4">
               <product-remove product="product" ng-show="productsList.isOwner(product)"></product-remove>
             </div>
-            <add-to-cart></add-to-cart>
+            <add-to-cart id="{{product._id}}" name="{{product.title}}" price="{{product.price}}" quantity="1" quantity-max="30" data="product"></add-to-cart>
           </div>
         </li>
       </ul>

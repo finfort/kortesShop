@@ -1,8 +1,10 @@
 class NgCartItem {
-    constructor($scope, $reactive, id, name, price, quantity, data, $log) {
+    constructor($reactive, id, name, price, quantity, data, $log) {
         'ngInject';
 
-        $reactive(this).attach($scope);
+        // $reactive(this).attach($scope);
+        debugger;
+        this.$log = $log;
 
         this.setId(id);
         this.setName(name);
@@ -23,7 +25,7 @@ class NgCartItem {
     setId(id) {
         if (id) this._id = id;
         else {
-            $log.error('An ID must be provided');
+            this.$log.error('An ID must be provided');
         }
     };
 
@@ -35,33 +37,31 @@ class NgCartItem {
     setName(name) {
         if (name) this._name = name;
         else {
-            $log.error('A name must be provided');
+            this.$log.error('A name must be provided');
         }
     };
-    getName () {
+    getName() {
         return this._name;
     };
 
-    setPrice (price) {
+    setPrice(price) {
         var priceFloat = parseFloat(price);
         if (priceFloat) {
             if (priceFloat <= 0) {
-                $log.error('A price must be over 0');
+                this.$log.error('A price must be over 0');
             } else {
                 this._price = (priceFloat);
             }
         } else {
-            $log.error('A price must be provided');
+            this.$log.error('A price must be provided');
         }
     };
-    getPrice () {
+    getPrice() {
         return this._price;
     };
 
 
-    setQuantity (quantity, relative) {
-
-
+    setQuantity(quantity, relative) {
         var quantityInt = parseInt(quantity);
         if (quantityInt % 1 === 0) {
             if (relative === true) {
@@ -73,31 +73,30 @@ class NgCartItem {
 
         } else {
             this._quantity = 1;
-            $log.info('Quantity must be an integer and was defaulted to 1');
+            this.$log.info('Quantity must be an integer and was defaulted to 1');
         }
-
-
     };
 
-    getQuantity () {
+    getQuantity() {
+        debugger;
         return this._quantity;
     };
 
-    setData (data) {
+    setData(data) {
         if (data) this._data = data;
     };
 
-    getData () {
+    getData() {
         if (this._data) return this._data;
-        else $log.info('This item has no data');
+        else this.$log.info('This item has no data');
     };
 
 
-    getTotal () {
+    getTotal() {
         return +parseFloat(this.getQuantity() * this.getPrice()).toFixed(2);
     };
 
-    toObject () {
+    toObject() {
         return {
             id: this.getId(),
             name: this.getName(),
@@ -110,13 +109,9 @@ class NgCartItem {
 
 }
 
-const name = 'ngCart';
-// const name = 'ngCartItem';
+const name = 'ngCartItem';
 
 // create a module
 export default angular.module(name, [
     angularMeteor
-]).service(name, {
-    controllerAs: name,
-    controller: NgCartItem
-});
+]).service(name, NgCartItem);
