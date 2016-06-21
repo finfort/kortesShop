@@ -1,14 +1,14 @@
-import { name as ngCartItem } from './ngCartItem';
+import { name as NgCartItem } from './ngCartItem';
 import { name as storeService } from './store';
 
 class NgCart {
 
-    constructor($reactive, $window, storeService, ngCartItem) {
+    constructor($reactive, $window, storeService, NgCartItem) {
         'ngInject';
         // $reactive(this).attach($scope);
         // console.log("ngcart service constructor");
         store = storeService;
-        ngCartItem  = ngCartItem;
+        this.NgCartItem  = NgCartItem;
 
         //  $rootScope.$on('ngCart:change', function(){ // i shouldn't user rooutscope here
         //     ngCart.$save();
@@ -40,7 +40,9 @@ class NgCart {
             inCart.setQuantity(quantity, false);
             // $rootScope.$broadcast('ngCart:itemUpdated', inCart);
         } else {
-            var newItem = ngCartItem.item(id, name, price, quantity, data);
+            // console.dir(this.NgCartItem);
+            // debugger;
+            var newItem = this.NgCartItem.item(id, name, price, quantity, data);
             this.$cart.items.push(newItem);
             // $rootScope.$broadcast('ngCart:itemAdded', newItem);
         }
@@ -183,7 +185,7 @@ class NgCart {
         _self.$cart.tax = storedCart.tax;
 
         angular.forEach(storedCart.items, function (item) {
-            _self.$cart.items.push(new ngCartItem(item._id, item._name, item._price, item._quantity, item._data));
+            _self.$cart.items.push(this.NgCartItem.item(item._id, item._name, item._price, item._quantity, item._data));
         });
         this.$save();
     };
@@ -202,5 +204,5 @@ const name = 'NgCart';
 export default angular.module(name, [
     angularMeteor,
     storeService,
-    ngCartItem
+    NgCartItem
 ]).service(name, NgCart);

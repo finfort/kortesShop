@@ -3,14 +3,7 @@ class NgCartItem {
         'ngInject';
 
         // $reactive(this).attach($scope);
-        // debugger;
         this.$log = $log;
-
-        // this.setId(id);
-        // this.setName(name);
-        // this.setPrice(price);
-        // this.setQuantity(quantity);
-        // this.setData(data);
     };
 
     item (id, name, price, quantity, data) {
@@ -19,6 +12,7 @@ class NgCartItem {
         this.setPrice(price);
         this.setQuantity(quantity);
         this.setData(data);
+        return this.toObject();
     };
 
 
@@ -30,6 +24,7 @@ class NgCartItem {
     };
 
     getId() {
+        debugger;
         return this._id;
     };
 
@@ -78,7 +73,6 @@ class NgCartItem {
     };
 
     getQuantity() {
-        debugger;
         return this._quantity;
     };
 
@@ -109,7 +103,7 @@ class NgCartItem {
 
 }
 
-const name = 'ngCartItem';
+const name = 'NgCartItem';
 
 // create a module
 export default angular.module(name, [
