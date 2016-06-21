@@ -97,14 +97,21 @@ class NgCart {
 
     getItems() {
         // debugger;
+        console.log("getItems()");
+        console.log(this.getCart().items);
         return this.getCart().items;
     };
 
     getTotalItems() {
         var count = 0;
         var items = this.getItems();
+        console.log("getTotalItems items");
+        console.dir(items);
         angular.forEach(items, function (item) {
-            count += item.getQuantity();
+            console.log("item");
+            console.log(item);
+            console.log(item.quantity);
+            count += item.quantity;
         });
         return count;
     };
@@ -116,12 +123,13 @@ class NgCart {
     getSubTotal() {
         var total = 0;
         angular.forEach(this.getCart().items, function (item) {
-            total += item.getTotal();
+            total += item.total;
         });
         return +parseFloat(total).toFixed(2);
     };
 
     totalCost() {
+        // debugger;
         return +parseFloat(this.getSubTotal() + this.getShipping() + this.getTax()).toFixed(2);
     };
 
@@ -136,7 +144,7 @@ class NgCart {
         var item;
         var cart = this.getCart();
         angular.forEach(cart.items, function (item, index) {
-            if (item.getId() === id) {
+            if (item.id === id) {
                 item = cart.items.splice(index, 1)[0] || {};
             }
         });

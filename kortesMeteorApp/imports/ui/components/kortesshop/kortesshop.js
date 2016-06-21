@@ -14,6 +14,7 @@ import { name as ProductRemove } from '../productRemove/productRemove';
 import { name as ProductDetails } from '../productDetails/productDetails';
 import { name as Auth } from '../auth/auth';
 import { name as Profile } from '../profile/profile';
+import { name as NgCartSummary } from '../ngCartSummary/ngCartSummary';
 
 class KortesShop {
 
@@ -34,7 +35,8 @@ export default angular.module(name, [
   Auth,
   FooterContent,
   HeaderContent,
-  Profile
+  Profile,
+  NgCartSummary
 
 ]).component(name, {
   templateUrl: `imports/ui/components/${name}/${name}.html`,

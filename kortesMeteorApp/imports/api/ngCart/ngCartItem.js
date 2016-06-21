@@ -24,7 +24,7 @@ class NgCartItem {
     };
 
     getId() {
-        debugger;
+        // debugger;
         return this._id;
     };
 
