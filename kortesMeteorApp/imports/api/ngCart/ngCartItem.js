@@ -85,7 +85,6 @@ class NgCartItem {
         else this.$log.info('This item has no data');
     };
 
-
     getTotal() {
         return +parseFloat(this.getQuantity() * this.getPrice()).toFixed(2);
     };

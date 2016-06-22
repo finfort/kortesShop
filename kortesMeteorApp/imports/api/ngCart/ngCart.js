@@ -8,7 +8,7 @@ class NgCart {
         // $reactive(this).attach($scope);
         // console.log("ngcart service constructor");
         store = storeService;
-        this.NgCartItem  = NgCartItem;
+        this.NgCartItem = NgCartItem;
 
         //  $rootScope.$on('ngCart:change', function(){ // i shouldn't user rooutscope here
         //     ngCart.$save();
@@ -37,7 +37,8 @@ class NgCart {
 
         if (typeof inCart === 'object') {
             //Update quantity of an item if it's already in the cart
-            inCart.setQuantity(quantity, false);
+            inCart.quantity += quantity;
+            // inCart.setQuantity(quantity, false);
             // $rootScope.$broadcast('ngCart:itemUpdated', inCart);
         } else {
             // console.dir(this.NgCartItem);
@@ -55,7 +56,7 @@ class NgCart {
         var build = false;
 
         angular.forEach(items, function (item) {
-            if (item.getId() === itemId) {
+            if (item.id === itemId) {
                 build = item;
             }
         });
@@ -105,12 +106,12 @@ class NgCart {
     getTotalItems() {
         var count = 0;
         var items = this.getItems();
-        console.log("getTotalItems items");
-        console.dir(items);
+        // console.log("getTotalItems items");
+        // console.dir(items);
         angular.forEach(items, function (item) {
-            console.log("item");
-            console.log(item);
-            console.log(item.quantity);
+            // console.log("item");
+            // console.log(item);
+            // console.log(item.quantity);
             count += item.quantity;
         });
         return count;
@@ -143,12 +144,16 @@ class NgCart {
     removeItemById(id) {
         var item;
         var cart = this.getCart();
+        console.dir("items" + cart.items);
+
         angular.forEach(cart.items, function (item, index) {
+            console.dir("item" + item);
             if (item.id === id) {
                 item = cart.items.splice(index, 1)[0] || {};
             }
         });
         this.setCart(cart);
+
         // $rootScope.$broadcast('ngCart:itemRemoved', item);
         // $rootScope.$broadcast('ngCart:change', {});
     };
