@@ -20,15 +20,16 @@ class NgCart {
         }
     }
 
-    $onChanges($cart){
+    $onChanges($cart) {
         this.$save(); // why this didn't calling?
     }
-    $onInit(){
-        console.log("!!!!!")
+
+    $onInit() {
+        console.log("!!!!!"); // not working also
     }
 
     init() {
-        
+
         this.$cart = {
             shipping: null,
             taxRate: null,
@@ -127,7 +128,7 @@ class NgCart {
     };
 
     totalCost() {
-        
+
         return +parseFloat(this.getSubTotal() + this.getShipping() + this.getTax()).toFixed(2);
     };
 
