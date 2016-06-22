@@ -20,8 +20,12 @@ class NgCart {
         }
     }
 
+    $onChanges($cart){
+        this.$save();
+    }
+
     init() {
-        // debugger;
+        
         this.$cart = {
             shipping: null,
             taxRate: null,
@@ -37,12 +41,10 @@ class NgCart {
 
         if (typeof inCart === 'object') {
             //Update quantity of an item if it's already in the cart
-            inCart.quantity += quantity;
-            // inCart.setQuantity(quantity, false);
+            // inCart.quantity += quantity;
+            inCart.setQuantity(quantity, false);
             // $rootScope.$broadcast('ngCart:itemUpdated', inCart);
         } else {
-            // console.dir(this.NgCartItem);
-            // debugger;
             var newItem = this.NgCartItem.item(id, name, price, quantity, data);
             this.$cart.items.push(newItem);
             // $rootScope.$broadcast('ngCart:itemAdded', newItem);
@@ -51,7 +53,6 @@ class NgCart {
     };
 
     getItemById(itemId) {
-        // debugger;
         var items = this.getCart().items;
         var build = false;
 
@@ -92,14 +93,12 @@ class NgCart {
     };
 
     getCart() {
-        // debugger;
         return this.$cart;
     };
 
     getItems() {
-        // debugger;
-        console.log("getItems()");
-        console.log(this.getCart().items);
+        // console.log("getItems()");
+        // console.log(this.getCart().items);
         return this.getCart().items;
     };
 
@@ -125,7 +124,7 @@ class NgCart {
     };
 
     totalCost() {
-        // debugger;
+        
         return +parseFloat(this.getSubTotal() + this.getShipping() + this.getTax()).toFixed(2);
     };
 

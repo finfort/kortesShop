@@ -11,11 +11,9 @@ class AddToCart {
         this.NgCart = NgCart;
 
         $reactive(this).attach($scope);
-        // debugger;
     }
 
     $onInit() {
-        // debugger;
         if (this.inCart()) {
             this.q = this.NgCart.getItemById(this.id).getQuantity();
         } else {
@@ -30,8 +28,6 @@ class AddToCart {
     }
 
     inCart() {
-        // console.log("cart " + this.NgCart);
-        // console.dir(this.NgCart);
         return this.NgCart.getItemById(this.id);
     }
 
