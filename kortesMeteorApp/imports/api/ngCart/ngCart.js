@@ -106,12 +106,7 @@ class NgCart {
     getTotalItems() {
         var count = 0;
         var items = this.getItems();
-        // console.log("getTotalItems items");
-        // console.dir(items);
         angular.forEach(items, function (item) {
-            // console.log("item");
-            // console.log(item);
-            // console.log(item.quantity);
             count += item.quantity;
         });
         return count;
@@ -144,10 +139,7 @@ class NgCart {
     removeItemById(id) {
         var item;
         var cart = this.getCart();
-        console.dir("items" + cart.items);
-
         angular.forEach(cart.items, function (item, index) {
-            console.dir("item" + item);
             if (item.id === id) {
                 item = cart.items.splice(index, 1)[0] || {};
             }
