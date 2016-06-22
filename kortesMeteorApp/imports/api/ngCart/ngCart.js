@@ -21,7 +21,10 @@ class NgCart {
     }
 
     $onChanges($cart){
-        this.$save();
+        this.$save(); // why this didn't calling?
+    }
+    $onInit(){
+        console.log("!!!!!")
     }
 
     init() {
