@@ -5,12 +5,9 @@ class NgCart {
 
     constructor($reactive, $window, storeService, NgCartItem) {
         'ngInject';
-        // $reactive(this).attach($scope);
-        // console.log("ngcart service constructor");
         store = storeService;
         this.NgCartItem = NgCartItem;
-
-        //  $rootScope.$on('ngCart:change', function(){ // i shouldn't user rooutscope here
+        //  $rootScope.$on('ngCart:change', function(){ // how to use it in 1.5?
         //     ngCart.$save();
         // });
         if (angular.isObject(store.get('cart'))) {
@@ -18,14 +15,6 @@ class NgCart {
         } else {
             this.init();
         }
-    }
-
-    $onChanges($cart) {
-        this.$save(); // why this didn't calling?
-    }
-
-    $onInit() {
-        console.log("!!!!!"); // not working also
     }
 
     init() {
