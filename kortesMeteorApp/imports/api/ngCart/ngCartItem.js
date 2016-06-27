@@ -1,7 +1,6 @@
 class NgCartItem {
     constructor($reactive,  $log) {
         'ngInject';
-
         // $reactive(this).attach($scope);
         this.$log = $log;
     };
@@ -15,6 +14,7 @@ class NgCartItem {
         // how to return here real object not toObject function????
         // to work properly with inCart.setQuantity(quantity, false);
         return this.toObject();
+
     };
 
 
