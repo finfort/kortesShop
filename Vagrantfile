@@ -60,6 +60,9 @@ Vagrant.configure(2) do |config|
   # config.push.define "atlas" do |push|
   #   push.app = "YOUR_ATLAS_USERNAME/YOUR_APPLICATION_NAME"
   # end
+	config.push.define "heroku" do |push|
+		push.app = "kortesshop"		
+	end
   config.vm.provider "virtualbox" do |v|
     v.memory = 1500
     v.cpus = 2

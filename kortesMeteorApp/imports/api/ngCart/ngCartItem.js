@@ -1,11 +1,10 @@
 class NgCartItem {
-    constructor($reactive,  $log) {
+    constructor($reactive, $log) {
         'ngInject';
-        // $reactive(this).attach($scope);
         this.$log = $log;
     };
 
-    item (id, name, price, quantity, data) {
+    item(id, name, price, quantity, data) {
         this.setId(id);
         this.setName(name);
         this.setPrice(price);
@@ -26,7 +25,6 @@ class NgCartItem {
     };
 
     getId() {
-        // debugger;
         return this._id;
     };
 

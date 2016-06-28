@@ -191,8 +191,6 @@ class NgCart {
         return store.set('cart', JSON.stringify(this.getCart()));
     }
 
-
-
 }
 
 const name = 'NgCart';
