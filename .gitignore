@@ -1,2 +1,3 @@
 .vagrant
 _bower
+node_modules/
