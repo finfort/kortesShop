@@ -1,9 +1,13 @@
 {
-  "name": "kortesMeteorApp",
+  "name": "kortesshop",
   "private": true,
   "scripts": {
     "start": "meteor run",
     "test:watch": "meteor test --driver-package sanjo:jasmine --port 3100"
+  },
+  "engines": {
+    "node": "5.9.0",
+    "npm": "3.7.x"
   },
   "dependencies": {
     "angular": "^1.5.5",
