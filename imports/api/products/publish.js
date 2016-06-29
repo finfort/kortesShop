@@ -27,9 +27,9 @@ if (Meteor.isServer) {
         }]
     };
 
-    // mongo regex for searching products by name
+    // mongo regex for searching products by title
     if (typeof searchString === 'string' && searchString.length) {
-      selector.name = {
+      selector.title = {
         $regex: `.*${searchString}.*`,
         $options: 'i'
       };
