@@ -53,6 +53,8 @@ class ProductDetails {
                     title: this.product.title,
                     description: this.product.description,
                     isVisible: this.product.isVisible,
+                    type: this.product.type,
+                    vendor: this.product.vendor,
                     price: this.product.price,
                     prlocation: this.product.prlocation
                 }
