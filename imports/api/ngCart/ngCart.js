@@ -34,7 +34,6 @@ class NgCart {
 
         if (typeof inCart === 'object') {
             //Update quantity of an item if it's already in the cart
-            // inCart.quantity += quantity;
             inCart.setQuantity(quantity, false);
             // $rootScope.$broadcast('ngCart:itemUpdated', inCart);
         } else {

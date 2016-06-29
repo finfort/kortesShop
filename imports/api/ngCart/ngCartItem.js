@@ -16,10 +16,6 @@ function NgCartItemFactory($log) {
             this.setPrice(price);
             this.setQuantity(quantity);
             this.setData(data);
-            // how to return here real object not toObject function????
-            // to work properly with inCart.setQuantity(quantity, false);
-            // return this.toObject();
-
         };
 
 

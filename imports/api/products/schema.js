@@ -162,5 +162,5 @@ Schema.Product = new SimpleSchema({
   }
 });
 
-Products.attachSchema(Schema.Product);
+// Products.attachSchema(Schema.Product);
 SimpleSchema.debug = true
