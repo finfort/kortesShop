@@ -39,8 +39,8 @@ class Profile {
                     dealerGroup: this.currentUser.dealerGroup,
                     staffGroup: this.currentUser.staffGroup,
                     isActive: this.currentUser.isActive,
-                    phone: this.currentUser.phone,
-                    internalNotes: this.currentUser.internalNotesphone
+                    phone: parseInt(this.currentUser.phone),
+                    internalNotes: this.currentUser.internalNotes
                 }
             }, (error) => {
                 if (error) {

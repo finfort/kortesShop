@@ -2,10 +2,10 @@
     <label for="email">email:</label> {{profile.currentUser.emails[0].address}} Not editable wright now
 
     <br> <label for="fullName">fullName:</label><input id="fullName" type="text" ng-model="profile.currentUser.fullName">
-    <br> <label for="registrationDate">registrationDate:</label><input id="registrationDate" type="text" ng-model="profile.currentUser.registrationDate">
+    <br> <label for="registrationDate">registrationDate:</label><input type="date" placeholder="yyyy-MM-dd" min="1990-01-01" max="2050-12-31"  id="registrationDate" ng-model="profile.currentUser.registrationDate">
     <br> <label for="dealerGroup">dealerGroup:</label><input id="dealerGroup" type="text" ng-model="profile.currentUser.dealerGroup">
     <br> <label for="staffGroup">staffGroup:</label> <input id="staffGroup" type="text" ng-model="profile.currentUser.staffGroup">
-    <br> <label for="isActive">isActive:</label> <input id="isActive" type="text" ng-model="profile.currentUser.isActive">
+    <br> <label for="isActive">isActive:</label> <input type="checkbox" id="isActive" ng-model="profile.currentUser.isActive">
     <br> <label for="phone">phone:</label> <input id="phone" type="text" ng-model="profile.currentUser.phone">
     <br> <label for="internalNotes">internalNotes:</label> <input id="internalNotes" type="text" ng-model="profile.currentUser.internalNotes">
     <br>
