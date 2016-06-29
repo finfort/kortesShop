@@ -64,6 +64,10 @@ class ProductDetails {
                 }
             });
     }
+
+    isOwner(product) {
+        return this.isLoggedIn && product.owner === this.currentUserId;
+    }
 }
 
 
