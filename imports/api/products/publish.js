@@ -7,11 +7,11 @@ if (Meteor.isServer) {
   Meteor.publish('products', function (options, searchString) {
     const selector = {
       $or: [{
-        // the public products
+        // the isVisible products
         $and: [{
-          public: true
+          isVisible: true
         }, {
-            public: {
+            isVisible: {
               $exists: true
             }
           }]
