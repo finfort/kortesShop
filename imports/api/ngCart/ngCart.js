@@ -38,7 +38,8 @@ class NgCart {
             inCart.setQuantity(quantity, false);
             // $rootScope.$broadcast('ngCart:itemUpdated', inCart);
         } else {
-            var newItem = this.NgCartItem.item(id, name, price, quantity, data);
+            var newItem = new this.NgCartItem(id, name, price, quantity, data);
+            // var newItem = this.NgCartItem.item(id, name, price, quantity, data);
             this.$cart.items.push(newItem);
             // $rootScope.$broadcast('ngCart:itemAdded', newItem);
         }
@@ -50,7 +51,7 @@ class NgCart {
         var build = false;
 
         angular.forEach(items, function (item) {
-            if (item.id === itemId) {
+            if (item.getId() === itemId) {
                 build = item;
             }
         });
@@ -99,7 +100,8 @@ class NgCart {
         var count = 0;
         var items = this.getItems();
         angular.forEach(items, function (item) {
-            count += item.quantity;
+            count += item.getQuantity();
+            // count += item.quantity;
         });
         return count;
     };
@@ -111,7 +113,8 @@ class NgCart {
     getSubTotal() {
         var total = 0;
         angular.forEach(this.getCart().items, function (item) {
-            total += item.total;
+            total += item.getTotal();
+            // total += item.total;
         });
         return +parseFloat(total).toFixed(2);
     };
