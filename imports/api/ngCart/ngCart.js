@@ -135,7 +135,7 @@ class NgCart {
         var item;
         var cart = this.getCart();
         angular.forEach(cart.items, function (item, index) {
-            if (item.id === id) {
+            if (item.getId() === id) {
                 item = cart.items.splice(index, 1)[0] || {};
             }
         });
@@ -185,7 +185,8 @@ class NgCart {
         _self.$cart.tax = storedCart.tax;
 
         angular.forEach(storedCart.items, function (item) {
-            _self.$cart.items.push(this.NgCartItem.item(item._id, item._name, item._price, item._quantity, item._data));
+            // _self.$cart.items.push(this.NgCartItem.item(item._id, item._name, item._price, item._quantity, item._data));
+            _self.$cart.items.push(new this.NgCartItem(item._id, item._name, item._price, item._quantity, item._data));
         });
         this.$save();
     };
