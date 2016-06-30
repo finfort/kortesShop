@@ -14,6 +14,7 @@ import { name as ProductRemove } from '../productRemove/productRemove';
 import { name as ProductDetails } from '../productDetails/productDetails';
 import { name as Auth } from '../auth/auth';
 import { name as Profile } from '../profile/profile';
+import { name as About } from '../about/about';
 import { name as NgCartSummary } from '../ngCartSummary/ngCartSummary';
 import { name as NgCartCart } from '../ngCartCart/ngCartCart';
 
@@ -37,6 +38,7 @@ export default angular.module(name, [
   FooterContent,
   HeaderContent,
   Profile,
+  About,
   NgCartSummary,
   NgCartCart
 
