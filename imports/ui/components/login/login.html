@@ -1,19 +1,27 @@
-<form name="loginForm">
+<form name="loginForm" novalidate>
   <div class="form-group">
-    <label>
+    <label for="email">
             Email
           </label>
-    <input type="text" ng-model="login.credentials.email" aria-label="email" required/>
+    <input type="email" id="email" name="email" ng-model="login.credentials.email" aria-label="email" required/>
+     <br />
+    <div ng-show="loginForm.$submitted || loginForm.email.$touched">
+      <div ng-show="loginForm.email.$error.required">Tell us your email.</div>
+      <div ng-show="loginForm.email.$error.email">This is not a valid email.</div>
+    </div>
   </div>
   <div class="form-group">
-    <label>
+    <label for="password">
             Password
           </label>
-    <input type="password" ng-model="login.credentials.password" aria-label="password" required/>
+    <input type="password" name="password" id="password" ng-model="login.credentials.password" aria-label="password" required/>
+    <div ng-show="loginForm.$submitted || loginForm.password.$touched">
+      <div ng-show="loginForm.password.$error.required">Tell us your password.</div>
+    </div>
   </div>
   <div class="form-group">
     <a class="md-button" href="/password">Forgot password?</a>
-    <button class="btn btn-default" ng-click="login.login()" aria-label="login" ng-disabled="login.loginForm.$invalid()">Sign In
+    <button class="btn btn-default" ng-click="login.login()" aria-label="login" ng-disabled="loginForm.$invalid">Sign In
           </button>
   </div>
 </form>
