@@ -30,24 +30,33 @@ class Register {
   }
 
   register() {
-    debugger;
     Accounts.createUser(this.credentials,
       this.$bindToContext((err) => {
         // 
         if (!err) {
-          Meteor.users.update({_id: Meteor.userId()}, {
-            $set: {
-              fullName: this.credentials.fullName,
-              registrationDate: this.credentials.registrationDate,
-              dealerGroup: this.credentials.dealerGroup,
-              staffGroup: this.credentials.staffGroup,
-              isActive: this.credentials.isActive,
-              phone: this.credentials.phone,
-              internalNotes: this.credentials.internalNotes
-            }
-          });
+          Meteor.users.update(
+            {
+              _id: Meteor.userId()
+            }, {
+              $set: {
+                fullName: this.credentials.fullName,
+                registrationDate: this.credentials.registrationDate,
+                dealerGroup: this.credentials.dealerGroup,
+                staffGroup: this.credentials.staffGroup,
+                isActive: this.credentials.isActive,
+                phone: parseInt(this.credentials.phone),
+                internalNotes: this.credentials.internalNotes
+              }
+            }, (error) => {
+              if (error) {
+                console.log('Oops, unable to create user...');
+                console.log(error);
+              } else {
+                console.log('Done!');
+              }
+            });
         }
-        
+
         if (err) {
           this.error = err;
         } else {
