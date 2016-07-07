@@ -16,7 +16,6 @@ standard-minifier-js    # JS minifier run for production mode
 es5-shim                # ECMAScript 5 compatibility for older browsers.
 
 angular-templates
-pbastowski:angular-babel
 accounts-password
 dotansimha:accounts-ui-angular
 angular-meteor-auth
@@ -31,3 +30,5 @@ jalik:ufs
 jalik:ufs-gridfs
 aldeed:collection2
 chriswessels:glyphicons-halflings
+pbastowski:angular-babel
+alanning:roles

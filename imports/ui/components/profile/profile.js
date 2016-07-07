@@ -45,6 +45,7 @@ class Profile {
             }, (error) => {
                 if (error) {
                     console.log('Oops, unable to update the user...');
+                    console.log(error);
                 } else {
                     console.log('Done updating user!');
                 }
