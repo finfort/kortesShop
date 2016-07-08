@@ -28,6 +28,8 @@ class Profile {
                 return Meteor.user();
             }
         });
+         var user = Meteor.users.findOne({ _id: Meteor.userId() });
+         debugger;
     }
     save() {
         Meteor.users.update({

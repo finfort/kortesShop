@@ -17,6 +17,7 @@ import { name as Profile } from '../profile/profile';
 import { name as About } from '../about/about';
 import { name as NgCartSummary } from '../ngCartSummary/ngCartSummary';
 import { name as NgCartCart } from '../ngCartCart/ngCartCart';
+import { name as Admin } from '../admin/admin';
 
 class KortesShop {
 
@@ -40,7 +41,8 @@ export default angular.module(name, [
   Profile,
   About,
   NgCartSummary,
-  NgCartCart
+  NgCartCart,
+  Admin
 
 ]).component(name, {
   templateUrl: `imports/ui/components/${name}/${name}.html`,
