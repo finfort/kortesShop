@@ -6,25 +6,25 @@
     "test:watch": "meteor test --driver-package sanjo:jasmine --port 3100"
   },
   "engines": {
-    "node": "5.9.0",
-    "npm": "3.7.x"
+    "node": "*",
+    "npm": "*"
   },
   "dependencies": {
-    "angular": "^1.5.5",
-    "angular-google-maps": "^2.3.3",
-    "angular-meteor": "^1.3.10",
-    "angular-simple-logger": "^0.1.7",
-    "angular-sortable-view": "0.0.15",
-    "angular-ui-bootstrap": "^1.3.2",
-    "angular-ui-router": "^1.0.0-alpha.4",
-    "angular-utils-pagination": "^0.11.1",
-    "bootstrap": "^3.3.6",
-    "gm": "^1.22.0",
-    "meteor-node-stubs": "~0.2.3",
-    "ng-file-upload": "^12.0.4",
-    "ng-img-crop": "^0.2.0"
+    "angular": "*",
+    "angular-google-maps": "*",
+    "angular-meteor": "*",
+    "angular-simple-logger": "*",
+    "angular-sortable-view": "*",
+    "angular-ui-bootstrap": "*",
+    "angular-ui-router": "1.0.0-beta.1",
+    "angular-utils-pagination": "*",
+    "bootstrap": "*",
+    "gm": "*",
+    "meteor-node-stubs": "*",
+    "ng-file-upload": "*",
+    "ng-img-crop": "*"
   },
   "devDependencies": {
-    "angular-mocks": "^1.5.5"
+    "angular-mocks": "*"
   }
 }

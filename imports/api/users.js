@@ -137,12 +137,12 @@ Schema.User = new SimpleSchema({
     type: Date,
     optional: true
   },
-  
+
   //
   // should move it to userProfileSchema?
   //
-  
-  
+
+
   fullName: {
     type: String,
     optional: true

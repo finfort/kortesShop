@@ -15,6 +15,18 @@ class HeaderContent {
     return viewLocation === this.$location.path();
   };
 
+  isInRole(role) {
+    var loggedInUser = Meteor.user()
+
+    if (!loggedInUser ||
+      !Roles.userIsInRole(loggedInUser,
+        [role])) {
+      return false;
+    } else {
+      return true;
+    }
+  }
+
 }
 const name = 'headerContent';
 
