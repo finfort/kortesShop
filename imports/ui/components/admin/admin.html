@@ -1,6 +1,15 @@
 <div ng-show="admin.admin">
     i am admin aa
+    <div class="row">
+        <div class="col-md-12">
+            <product-add ng-show="admin.isLoggedIn"></product-add>
+            <!--<product-add-button ng-show="productsList.isLoggedIn"></product-add-button>-->
+            <div class="alert alert-warning" role="alert" ng-hide="admin.isLoggedIn">
+                <strong>Warning!</strong> Log in to create a product!
+            </div>
+        </div>
+    </div>
 </div>
 <div ng-hide="admin.admin">
-    NOT AUTHORIZED  
+    NOT AUTHORIZED
 </div>

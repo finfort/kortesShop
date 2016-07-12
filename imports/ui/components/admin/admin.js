@@ -2,7 +2,7 @@ import angular from 'angular';
 import angularMeteor from 'angular-meteor';
 
 import { Meteor } from 'meteor/meteor';
-
+import { name as ProductAdd } from '../productAdd/productAdd';
 import admin from './admin.html';
 
 
@@ -18,20 +18,19 @@ class Admin {
 
 
         this.helpers({
-            
+
             isLoggedIn() {
                 return !!Meteor.userId();
-            }
-            ,
+            },
             currentUser() {
                 return Meteor.user();
             },
-            admin(){
+            admin() {
                 return Roles.userIsInRole(Meteor.user(), ["admin"]);
             }
         });
 
-
+        //creepy should how to prevent non admin users go here?
         this.autorun(() => {
             let user = Meteor.user();
             if (user && user.roles && user.roles.__global_roles__.length > 0) {
@@ -52,7 +51,8 @@ class Admin {
 // create a module
 export default angular.module(name, [
     angularMeteor,
-    'angular-meteor.auth'
+    'angular-meteor.auth',
+    ProductAdd
 ]).component(name, {
     templateUrl: `imports/ui/components/${name}/${name}.html`,
     controllerAs: name,

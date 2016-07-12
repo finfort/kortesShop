@@ -5,7 +5,7 @@ import utilsPagination from 'angular-utils-pagination';
 import { Counts } from 'meteor/tmeasday:publish-counts';
 
 import { Products } from '../../../api/products/index';
-import { name as ProductAdd } from '../productAdd/productAdd';
+
 import { name as ProductRemove } from '../productRemove/productRemove';
 import { name as ProductsSort } from '../productsSort/productsSort';
 // import { name as ProductAddButton } from '../productAddButton/productAddButton';
@@ -43,12 +43,12 @@ class ProductsList {
                     sort: this.getReactively('sort')
                 });
             },
-            productsCount() {
-                return Counts.get('numberOfProducts');
-            },
             isLoggedIn() {
                 return !!Meteor.userId();
             },
+            productsCount() {
+                return Counts.get('numberOfProducts');
+            },            
             currentUserId() {
                 return Meteor.userId();
             }
@@ -76,7 +76,6 @@ export default angular.module(name, [
     uiRouter,
     utilsPagination,
     ProductsSort,
-    ProductAdd,
     ProductRemove,
     ProductImage,
     AddToCart,
