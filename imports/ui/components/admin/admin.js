@@ -25,13 +25,15 @@ class Admin {
             ,
             currentUser() {
                 return Meteor.user();
+            },
+            admin(){
+                return Roles.userIsInRole(Meteor.user(), ["admin"]);
             }
         });
 
 
         this.autorun(() => {
             let user = Meteor.user();
-            console.log(user);
             if (user && user.roles && user.roles.__global_roles__.length > 0) {
                 if (Roles.userIsInRole(user, ["admin"])) {
                     console.log("admin user granted");
